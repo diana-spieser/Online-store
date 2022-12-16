@@ -1,0 +1,9 @@
+<h1>ALL CATEGORIES</h1>
+
+<%@categories.each do |category| %>
+<%if category.user == current_user %>
+<h2><%= category.name %>:</h2>
+<%= category.description %>
+<%= cl_image_tag category.photo.key %>
+<% end %>
+<% end %>
