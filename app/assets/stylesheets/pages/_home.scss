@@ -1,1 +1,65 @@
-// Specific CSS for your home-page
+// Specific CSS for your home-page generic design
+// body {
+// // background-color: #1E7173;
+// // opacity: 0.7;
+// color: blue($color: #36BFC1);
+// font-family:'Courier New', Courier, monospace;
+// font-size: medium;
+// font-weight: bold;
+// background: linear-gradient(#1E7173, 10%, #36BFC1);
+// }
+
+// h1 {
+//   font-size: 32px;
+//   font-weight: bolder;
+// }
+
+// h2{
+//   font-size: 24px;
+//   color: #F3D6C1;
+//   font-weight: bolder;
+//   }
+//   a {
+//     text-decoration: none;
+//     color:aquamarine;
+//     font-weight: bold;
+//   }
+
+p {text-align: justify;}
+
+ /* Custom design home page */
+
+
+
+.card-white {
+  background: white;
+  padding: 32px;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  // width: 700px;
+  margin: 24px auto;
+  margin-bottom: 10px;
+}
+.img-circle {
+  border-radius: 50%;
+  width: 100px;
+
+}
+Ò
+.shadowed {
+  box-shadow: 5px 5px 3px black ;
+}
+.text-justify {
+  text-align: justify;
+}
+
+// .indication-couleur {
+//   background: linear-gradient(#1E7173, 10%, #36BFC1);
+// }
+
+.text-center {
+  text-align: center;
+}
+#intro p {
+margin-bottom: 40px;
+}

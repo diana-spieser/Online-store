@@ -1,0 +1,23 @@
+.btn-blue {
+  background-color: $bluegris;
+  color: #F3D6C1;;
+  font-weight: bolder;
+  border-radius: 4px;
+  padding: 12px 16px;
+  text-decoration: none;
+}
+.btn-blue:hover {
+  background-color: $bluegrisligter;
+}
+.btn-bluegris {
+  background-color: #1E7173;
+  color: #F3D6C1;
+  border-radius: 4px;
+  padding: 16px 24px;
+  border: 1px solid transparent;
+}
+.btn-bluegris:hover {
+  border: 1px solid  #1E7173;
+  color:#1E7173;
+  background-color: #F3D6C1;
+}

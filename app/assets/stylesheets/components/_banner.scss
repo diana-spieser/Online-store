@@ -1,0 +1,37 @@
+.banner {
+  background-image: url("https://res.cloudinary.com/dygywvyiq/image/upload/v1671373019/308189782_1495750840846329_7736143130357964402_n_jlws1f.jpg");
+  background-size: cover;
+  color: white;
+  padding: 120px 0;
+}
+.banner h1 {
+  font-size: 38px;
+  text-shadow: 0 10px 30px rgba(0,0,0,.1);
+}
+.banner p {
+  font-size: 30px;
+  font-style: italic;
+  font-weight: lighter;
+  opacity: 0.8;
+  text-shadow: 0 10px 30px rgba(0,0,0,.1);
+}
+.banner-home {
+  background-image: url("https://res.cloudinary.com/dygywvyiq/image/upload/v1671373019/308056436_622214206019091_4024967529802079631_n_jj8llr.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 120px 0;
+
+}
+.banner-home h1 {
+  font-size: 48px;
+  text-shadow: 0 10px 30px rgba(0,0,0,.1);
+}
+.banner-home p {
+  font-size: px;
+  font-style: italic;
+  font-weight: lighter;
+  opacity: 0.8;
+  margin-bottom: 30px;
+  text-shadow: 0 10px 30px rgba(0,0,0,.1);
+}

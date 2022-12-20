@@ -1,0 +1,29 @@
+<div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @category.photo.attached? ? cl_image_path(@category.photo.key) : asset_path('product_background.jpg') %>)">
+    <h1><%= @category.name %></h1>
+  </div>
+<%= link_to "Back to categories", categories_path, class: "btn-retour" %></div>
+
+
+
+
+
+
+<div class='container'>
+<div class="container index-cards-container">
+  <%@category.products.each do |product| %>
+  <div class="card-trip">
+    <%= cl_image_tag product.photo.key, crop: :fill%>
+    <div class="card-trip-infos">
+      <div>
+      <%= link_to product_path(product), class:"text-decoration-none" do %>
+        <h2><%=product.name%></h2>
+        <p><%=product.description%></p>
+         <% end %>
+      </div>
+       <h2 class="card-trip-pricing"><%= product.price %></h2>
+      <img src="https://res.cloudinary.com/dygywvyiq/image/upload/v1671296167/logo_y7nn7i.jpg" class="card-trip-user avatar-bordered" />
+    </div>
+  </div>
+
+  <%end%>
+</div>

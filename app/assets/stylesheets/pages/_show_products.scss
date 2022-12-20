@@ -1,0 +1,44 @@
+body {
+  background-color: white;
+}
+
+.show-container {
+  background-color: white;
+}
+
+.show-bloc {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+  width: 80%;
+  margin-top: 15px ;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  border-radius: 10px;
+  margin-left: 150px;
+  margin-bottom: 100px;
+  position: relative;
+}
+.show-h2 {
+  text-align: center;
+  padding-top: 15px;
+}
+
+.show-img {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding-left: 50px;
+}
+
+.show-infos {
+  color: #636363;
+  text-align: left;
+  padding-left: 80px;
+  padding: 50px;
+}
+
+.show-price {
+  font-weight: bold;
+  font-size: large;
+}

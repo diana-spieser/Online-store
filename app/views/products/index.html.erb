@@ -1,0 +1,17 @@
+
+<div class="container index-cards-container">
+  <% @products.each do |product| %>
+  <div class="card-trip">
+    <%= cl_image_tag product.photo.key, crop: :fill%>
+    <div class="card-trip-infos">
+      <div>
+        <h2><%=product.name%></h2>
+        <p><%=product.description%></p>
+      </div>
+      <h2 class="card-trip-pricing"><%=product.price%></h2>
+      <img src="https://res.cloudinary.com/dygywvyiq/image/upload/v1671296167/logo_y7nn7i.jpg" class="card-trip-user avatar-bordered" />
+    </div>
+  </div>
+  <%end%>
+</div>
+<center> <%= link_to 'See all categories', categories_path, class:"btn-blue" %></center>

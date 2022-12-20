@@ -1,0 +1,9 @@
+<%= simple_form_for(@product)  do |f| %>
+      <%= f.input :name, placeholder: "Name"%>
+      <%= f.input :description, placeholder: "Description" %>
+      <%= f.input :price, placeholder: "16,99€" %>
+      <%= f.input :quantity, placeholder: "1" %>
+      <%= f.input :category, collection: Category.all, label_method: :name, value_method: :id,label: "Category", include_blank: false, selected: @product.category_id %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit "Edit new product", class: "btn btn-primary"%>
+      <% end %>

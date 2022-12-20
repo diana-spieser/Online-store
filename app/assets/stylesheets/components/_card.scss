@@ -1,0 +1,116 @@
+
+  .index-cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 24px;
+    justify-content: space-between;
+    align-items: center;
+    // margin-left: px;
+    margin-bottom: 38px;
+  }
+
+  // .index-cards-container h5 {
+
+  //   color:#E5B4F9;
+  //   text-align: center;
+  // }
+
+
+  // .image-container-index {
+  //   width: 100%;
+  //   height: 200px;
+  //   display: flex;
+  //   justify-content: center;
+
+  // }
+
+  // .card-index {
+  //   box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  //   border-radius: 10px;
+  //   padding: 12px;
+  //   // height:400px;
+  //   position: relative;
+  //   justify-content: center;
+
+  //   &:hover{
+  //     box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  //   }
+  // }
+  // .card-name-price-index {
+  //   display: flex;
+  //   justify-content: space-between;
+  // }
+
+  // .image-card-index {
+  //   max-height: 100%;
+  //   max-width: 100%;
+  // }
+
+  // .index-btn {
+  //   color: #29202D;
+  //   padding: 8px 24px;
+  //   border-radius: 4px;
+  //   background: #CEF3F0;
+  //   transition: background 0.3s ease;
+  //   text-decoration: none;
+  //   position: absolute;
+  //   left: 20%;
+  //   top: 80%;
+  // }
+  // .btn-flat:hover {
+  //   background: #FFEBEB;
+  //   color: #29202D;
+  // }
+
+  @media(max-width: 900px) {
+    .card-index {
+      margin-bottom: 15px;
+    }
+  }
+
+  @media(max-width: 500px) {
+    .index-cards-container {
+      justify-content: space-around;
+    }
+  }
+
+  //card-trip
+  .card-trip {
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  }
+
+  .card-trip > img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .card-trip h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .card-trip p {
+    font-size: 12px;
+    opacity: .7;
+    margin: 0;
+  }
+
+
+  .card-trip .card-trip-infos {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+  }
+
+  .card-trip-infos .card-trip-user {
+    position: absolute;
+    right: 16px;
+    top: -20px;
+    width: 40px;
+  }
