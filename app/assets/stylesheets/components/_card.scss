@@ -9,59 +9,6 @@
     margin-bottom: 38px;
   }
 
-  // .index-cards-container h5 {
-
-  //   color:#E5B4F9;
-  //   text-align: center;
-  // }
-
-
-  // .image-container-index {
-  //   width: 100%;
-  //   height: 200px;
-  //   display: flex;
-  //   justify-content: center;
-
-  // }
-
-  // .card-index {
-  //   box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
-  //   border-radius: 10px;
-  //   padding: 12px;
-  //   // height:400px;
-  //   position: relative;
-  //   justify-content: center;
-
-  //   &:hover{
-  //     box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
-  //   }
-  // }
-  // .card-name-price-index {
-  //   display: flex;
-  //   justify-content: space-between;
-  // }
-
-  // .image-card-index {
-  //   max-height: 100%;
-  //   max-width: 100%;
-  // }
-
-  // .index-btn {
-  //   color: #29202D;
-  //   padding: 8px 24px;
-  //   border-radius: 4px;
-  //   background: #CEF3F0;
-  //   transition: background 0.3s ease;
-  //   text-decoration: none;
-  //   position: absolute;
-  //   left: 20%;
-  //   top: 80%;
-  // }
-  // .btn-flat:hover {
-  //   background: #FFEBEB;
-  //   color: #29202D;
-  // }
-
   @media(max-width: 992px) {
     .index-cards-container {
       grid-template-columns: 1fr 1fr;
@@ -76,33 +23,33 @@
 
 
 
-  //card-trip
-  .card-trip {
+  //card-index
+  .card-index {
     overflow: hidden;
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
   }
 
-  .card-trip > img {
+  .card-index > img {
     height: 200px;
     width: 100%;
     object-fit: cover;
   }
 
-  .card-trip h2 {
+  .card-index h2 {
     font-size: 16px;
     font-weight: bold;
     margin: 0;
   }
 
-  .card-trip p {
+  .card-index p {
     font-size: 12px;
     opacity: .7;
     margin: 0;
   }
 
 
-  .card-trip .card-trip-infos {
+  .card-index .card-index-infos {
     padding: 16px;
     display: flex;
     justify-content: space-between;
@@ -110,7 +57,7 @@
     position: relative;
   }
 
-  .card-trip-infos .card-trip-user {
+  .card-index-infos .card-index-user {
     position: absolute;
     right: 16px;
     top: -20px;
