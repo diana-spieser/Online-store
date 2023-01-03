@@ -1,0 +1,30 @@
+.dashboard-apis {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  width: 90%;
+  border-radius: 4px;
+  margin: 50px;
+  h3 {
+    margin-bottom: 10px;
+  }
+  .dash-api {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    .api-title {
+      justify-content: center;
+      text-align: center;
+    }
+    .dashboard-social{
+      font-family: 'DM Sans';
+      font-style: normal;
+      font-weight: 400px;
+      font-size: 30px;
+      line-height: 35px;
+      display: flex;
+      text-align: center;
+      color: #C65759;
+      }
+  }
+}

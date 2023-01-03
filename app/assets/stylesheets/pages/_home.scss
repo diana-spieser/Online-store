@@ -1,65 +1,42 @@
-// Specific CSS for your home-page generic design
-// body {
-// // background-color: #1E7173;
-// // opacity: 0.7;
-// color: blue($color: #36BFC1);
-// font-family:'Courier New', Courier, monospace;
-// font-size: medium;
-// font-weight: bold;
-// background: linear-gradient(#1E7173, 10%, #36BFC1);
-// }
 
-// h1 {
-//   font-size: 32px;
-//   font-weight: bolder;
-// }
-
-// h2{
-//   font-size: 24px;
-//   color: #F3D6C1;
-//   font-weight: bolder;
-//   }
-//   a {
-//     text-decoration: none;
-//     color:aquamarine;
-//     font-weight: bold;
-//   }
-
-p {text-align: justify;}
-
- /* Custom design home page */
-
-
-
-.card-white {
-  background: white;
-  padding: 32px;
-  border-radius: 4px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.1);
-  // width: 700px;
-  margin: 24px auto;
-  margin-bottom: 10px;
+.cover-pages {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://res.cloudinary.com/dygywvyiq/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1671373019/joanabossa/308056436_622214206019091_4024967529802079631_n_jj8llr.jpg");
+  height: 880px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
-.img-circle {
-  border-radius: 50%;
-  width: 100px;
-
-}
-Ò
-.shadowed {
-  box-shadow: 5px 5px 3px black ;
-}
-.text-justify {
-  text-align: justify;
-}
-
-// .indication-couleur {
-//   background: linear-gradient(#1E7173, 10%, #36BFC1);
-// }
-
-.text-center {
+.cover-pages h1 {
+  margin: 0;
+  background-position: top;
+  color: $cardbackkground;
+  font-size: 94px;
+  font-weight: bold;
+  text-shadow: 3px 5px 6px #000000;
   text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Great Vibes', cursive;
+
+
 }
-#intro p {
-margin-bottom: 40px;
+
+.text-gradient {
+  background: -webkit-linear-gradient(#white,#black );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: $cardbackkground;
+}
+
+
+
+.cover-pages p {
+  font-size: 36px;
+  color: #972419;
+  opacity: .9;
+  margin-bottom: 80px;
+  text-shadow: 1px 1px 1px #000000;
+  font-family: 'Bebas Neue', cursive;
+
 }
