@@ -62,17 +62,19 @@
   //   color: #29202D;
   // }
 
-  @media(max-width: 900px) {
-    .card-index {
-      margin-bottom: 15px;
+  @media(max-width: 992px) {
+    .index-cards-container {
+      grid-template-columns: 1fr 1fr;
     }
   }
 
-  @media(max-width: 500px) {
+  @media(max-width: 768px) {
     .index-cards-container {
-      justify-content: space-around;
+      grid-template-columns: 1fr;
     }
   }
+
+
 
   //card-trip
   .card-trip {
