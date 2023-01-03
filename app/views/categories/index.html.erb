@@ -1,29 +1,19 @@
-
-<%# <div class="banner">
-  <div class="container">
-    <h1>Joana Bossanova</h1>
-      <p> 𝐻𝒶𝓃𝒹 𝒸𝓇𝒶𝒻𝓉𝑒𝒹 𝒿𝑒𝓌𝑒𝓁𝓇𝓎 𝓌𝒾𝓉𝒽 𝒶 𝓈𝓉𝑜𝓇𝓎 𝓉𝑜 𝓉𝑒𝓁𝓁 </p>
-  </div>
-</div> %>
-
 <div class='container'>
-<h2 class='index-title'><b>Choose a story...</b></h2>
-<div class="container index-cards-container">
-  <%@categories.each do |category| %>
-  <div class="card-trip">
-    <%= cl_image_tag category.photo.key, crop: :fill%>
-    <div class="card-trip-infos">
-      <div>
-      <%= link_to category_path(category), class:"text-decoration-none" do %>
-        <h2><%=category.name%></h2>
-        <p><%=category.description%></p>
+  <h2 class='index-title'><b>Choose a story...</b></h2>
+    <div class="container index-cards-container">
+       <%@categories.each do |category| %>
+        <div class="card-index">
+          <%= cl_image_tag category.photo.key, crop: :fill%>
+           <div class="card-index-infos">
+          <div>
+          <%= link_to category_path(category), class:"text-decoration-none" do %>
+          <h2><%=category.name%></h2>
+          <p><%=category.description%></p>
          <% end %>
-      </div>
-      <%# <h2 class="card-trip-pricing">£99.99</h2> %>
+        </div>
       <img src="https://res.cloudinary.com/dygywvyiq/image/upload/v1671296167/logo_y7nn7i.jpg" class="card-trip-user avatar-bordered" />
     </div>
   </div>
-
   <%end%>
 </div>
 <center> <%= link_to 'All products', products_path, class:"btn btn-blue" %></center>
@@ -31,30 +21,3 @@
  <br>
  <br>
  <br>
-
-
-<%# div class='container'>
-  <h2><b>Choose a story...</b></h2> %>
-
-  <%# <div class="container index-cards-container">
-    <%@categories.each do |category| %>
-      <%# <%if category.user == current_user %>
-      <%# <div class="card card-index"> %>
-       <%# style="width: 18rem;" %>
-          <%# <div class="image-container image-container-index"> %>
-            <%# <%= cl_image_tag category.photo.key, crop: :fill, class:'image-card image-card-index'%>
-            <%# </div> %>
-        <%# <div class="card-body"> %>
-          <%# <div class="card-name-price card-name-price-index"> %>
-            <%# <h5 class="card-title"><%=category.name</h5> %>
-              <%# </div> %>
-        <%# <p class="card-text"><%=category.description</p> %>
-        <%# <a href="#" class="link-medium">This is how you really do it</a> %>
-            <%# <%= link_to 'Découvrez ce rêve', dream_path(dream), class:"btn-flat index-btn" %>
-
-            <%# </div>
-      </div>
-      <%end%>
-      <%# <%end%>
-  <%# </div> %>
-<%# </div> %>
