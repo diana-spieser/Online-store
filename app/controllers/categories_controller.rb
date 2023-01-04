@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  before_action :authenticate_user!, :only => [:new]
   before_action :set_category, only: [ :edit, :show, :update, :destroy ]
 
   def index

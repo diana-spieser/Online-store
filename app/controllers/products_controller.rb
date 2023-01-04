@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!, :only => [:new]
   before_action :set_product, only: [ :edit, :show, :update, :destroy ]
   before_action :set_categories, only: [:new, :create, :edit]
   # before_action :set_category, only: [ :new, :create]
@@ -12,6 +13,7 @@ class ProductsController < ApplicationController
       @products = Product.all
     end
   end
+
   def new
     @product = Product.new
   end
@@ -47,9 +49,11 @@ class ProductsController < ApplicationController
   def set_category
     @category = Category.find(params[:category_id])
   end
+
   def set_categories
     @categories = Category.all.order(:name)
   end
+
   def set_product
     @product = Product.find(params[:id])
   end
