@@ -4,8 +4,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans&family=Original+Surfer&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,100;1,300;1,400&display=swap');
+
 // Define fonts for body and headers
-$body-font: "font-family: 'Montserrat', sans-serif;", "Helvetica", "sans-serif";
+$body-font: "font-family: 'Monserrat', sans-serif;", "Helvetica", "sans-serif";
 $headers-font: "Montserrat", "Helvetica", "sans-serif";
 
 
@@ -17,4 +20,7 @@ $headers-font: "Montserrat", "Helvetica", "sans-serif";
 //        font-url('FontFile.woff') format('woff'),
 //        font-url('FontFile.ttf') format('truetype')
 // }
-// $my-font: "Font Name";
+// // $my-font: "Font Name";
+// font-family: 'Merriweather', serif;
+// font-family: 'Open Sans', sans-serif;
+// font-family: 'Original Surfer', cursive;

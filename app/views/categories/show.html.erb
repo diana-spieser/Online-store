@@ -1,7 +1,7 @@
 <div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @category.photo.attached? ? cl_image_path(@category.photo.key) : asset_path('product_background.jpg') %>)">
     <h1><%= @category.name %></h1>
   </div>
-<%= link_to "Back to categories", categories_path, class: "btn-retour" %></div>
+</div> <%= link_to "← Back", categories_path, class:"text-decoration-none text-dark ms-5 " %>
 
 <div class='container'>
 <div class="container index-cards-container">

@@ -1,22 +1,28 @@
+<div class="cover-index mb-4 d-flex align-items-center justify-content-center">
+  <div class="text-center text-white">
+    <h1>Joanabossa </h1>
+      <p><span data-controller="typed-js"></span></p>
+  </div>
+</div>
 <div class='container'>
-  <h2 class='index-title'><b>Choose a story...</b></h2>
+  <center><h2 class='index-title'><b>Choose a story...</b></h2></center>
     <div class="container index-cards-container">
-       <%@categories.each do |category| %>
+      <%@categories.each do |category| %>
         <div class="card-index">
           <%= cl_image_tag category.photo.key, crop: :fill%>
-           <div class="card-index-infos">
+          <div class="card-index-infos">
           <div>
           <%= link_to category_path(category), class:"text-decoration-none" do %>
           <h2><%=category.name%></h2>
           <p><%=category.description%></p>
-         <% end %>
+        <% end %>
         </div>
       <img src="https://res.cloudinary.com/dygywvyiq/image/upload/v1671296167/logo_y7nn7i.jpg" class="card-trip-user avatar-bordered" />
     </div>
   </div>
   <%end%>
 </div>
-<center> <%= link_to 'All products', products_path, class:"btn btn-blue" %></center>
+<center> <%= link_to 'All products', products_path, class:"btn-index" %></center>
  <br>
  <br>
  <br>

@@ -1,47 +1,29 @@
-h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {}
-        a,
-        a:hover,
-        a:focus,
-        a:active {
-            text-decoration: none;
-            outline: none;
-        }
+.container-about {
+background-image: url('');
+width: 100%;
+background-size: cover;
+background-repeat: no-repeat;
+background-position: top;
+color: white;
+box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  }
 
-        a,
-        a:active,
-        a:focus {
-            color: #6f6f6f;
-            text-decoration: none;
-            transition-timing-function: ease-in-out;
-            -ms-transition-timing-function: ease-in-out;
-            -moz-transition-timing-function: ease-in-out;
-            -webkit-transition-timing-function: ease-in-out;
-            -o-transition-timing-function: ease-in-out;
-            transition-duration: .2s;
-            -ms-transition-duration: .2s;
-            -moz-transition-duration: .2s;
-            -webkit-transition-duration: .2s;
-            -o-transition-duration: .2s;
-        }
 
-        ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-        img {
-    max-width: 100%;
-    height: auto;
+ul {
+ margin: 0;
+padding: 0;
+list-style: none;
 }
-        section {
-            padding: 60px 0;
-           /* min-height: 100vh;*/
-        }
+
+img {
+max-width: 100%;
+height: auto;
+}
+
+section {
+padding: 60px 0;
+/* min-height: 100vh;*/
+}
 
 .sec-title{
   position:relative;
@@ -54,7 +36,7 @@ h1,
   display: block;
   font-size: 18px;
   line-height: 24px;
-  color: #00aeef;
+  color: $cardheadline;
   font-weight: 500;
   margin-bottom: 15px;
 }
@@ -83,7 +65,7 @@ h1,
   position: relative;
   font-size: 16px;
   line-height: 26px;
-  color: #848484;
+  color: white;
   font-weight: 400;
   margin-top: 35px;
 }
@@ -105,7 +87,7 @@ h1,
   position:relative;
   font-size:16px;
   line-height:26px;
-  color: #222222;
+  color: white;
   font-weight:400;
   padding-left:35px;
   margin-bottom: 12px;
@@ -134,23 +116,7 @@ h1,
   color: #44bce2;
 }
 
-.btn-style-one{
-  position: relative;
-  display: inline-block;
-  font-size: 17px;
-  line-height: 30px;
-  color: #ffffff;
-  padding: 10px 30px;
-  font-weight: 600;
-  overflow: hidden;
-  letter-spacing: 0.02em;
-  background-color: #00aeef;
-}
 
-.btn-style-one:hover{
-  background-color: #0794c9;
-  color: #ffffff;
-}
 .about-section{
   position: relative;
   padding: 120px 0 70px;
@@ -174,8 +140,9 @@ h1,
   margin-bottom: 20px;
   font-size: 16px;
   line-height: 26px;
-  color: #848484;
+  color: $paragraph;
   font-weight: 400;
+
 }
 
 .about-section .list-style-one{
@@ -244,7 +211,7 @@ h1,
     left: -3px;
     background: transparent;
     z-index: 0;
-    border: 44px solid #00aeef;
+    border: 44px solid #D5D0BD;
 }
 
 .about-section .image-column .image-1{

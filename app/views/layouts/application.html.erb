@@ -12,7 +12,7 @@
 
   <body>
 
-   <% if current_page?(root_path) ||  current_page?(user_session_path) || current_page?(new_user_registration_path) || current_page?(new_user_session_path)%>
+   <% if current_page?(user_session_path) || current_page?(new_user_registration_path) || current_page?(new_user_session_path)%>
     <%else%>
     <%= render "shared/navbar" %>
     <%end%>
@@ -22,7 +22,7 @@
 
       <%= yield %>
 
-    <% if current_page?(root_path) || current_page?(about_path) || current_page?(user_session_path) || current_page?(new_user_registration_path) || current_page?(new_user_session_path)%>
+    <% if current_page?(about_path) || current_page?(user_session_path) || current_page?(new_user_registration_path) || current_page?(new_user_session_path)%>
 
     <%else%>
       <%= render "shared/footer"%>

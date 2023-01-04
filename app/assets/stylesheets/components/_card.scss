@@ -1,65 +1,55 @@
+//card-index
+.card-index {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
 
-  .index-cards-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 24px;
-    justify-content: space-between;
-    align-items: center;
-    // margin-left: px;
-    margin-bottom: 38px;
-  }
+.card-index > img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  transition: transform .1s;
+}
+.card-index > img:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+-webkit-transform: scale(1.5); /* Safari 3-8 */
+transform: scale(1.5);
+}
 
-  @media(max-width: 992px) {
-    .index-cards-container {
-      grid-template-columns: 1fr 1fr;
+.card-index h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: $cardheadline;
+}
+.card-index h2:hover {
+ color:#908F8B;
     }
-  }
-
-  @media(max-width: 768px) {
-    .index-cards-container {
-      grid-template-columns: 1fr;
-    }
-  }
 
 
-
-  //card-index
-  .card-index {
-    overflow: hidden;
-    background: white;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  }
-
-  .card-index > img {
-    height: 200px;
-    width: 100%;
-    object-fit: cover;
-  }
-
-  .card-index h2 {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0;
-  }
-
-  .card-index p {
-    font-size: 12px;
-    opacity: .7;
-    margin: 0;
-  }
+.card-index p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+  color: $paragraph;
+}
+.card-index p:hover {
+  font-weight: lighter;
+}
 
 
-  .card-index .card-index-infos {
-    padding: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    position: relative;
-  }
+.card-index .card-index-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
 
-  .card-index-infos .card-index-user {
-    position: absolute;
-    right: 16px;
-    top: -20px;
-    width: 40px;
-  }
+.card-index-infos .card-index-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}

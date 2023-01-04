@@ -1,12 +1,60 @@
+.cover-index {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://res.cloudinary.com/dygywvyiq/image/upload/v1672824648/joanabossa/308056436_622214206019091_4024967529802079631_n_jj8llr_bc516f.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: inherit;
+  color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 467px;
 
-body {
-    background-image: linear-gradient(white, $beige);
-    }
-
-.index-title {
-  margin-top: 20px;
+}
+.cover-index h1 {
+  margin: 0;
+  background-position: top;
+  color: $cardbackkground;
+  font-size: 60px;
+  font-weight: bold;
+  text-shadow: 3px 5px 6px #000000;
   text-align: center;
+  margin-bottom: 5px;
   font-family: 'Great Vibes', cursive;
-  letter-spacing: 3px;
+}
 
+.cover-index p {
+  font-size: 22px;
+  color: #972419;
+  opacity: .9;
+  margin-bottom: 80px;
+  text-shadow: 1px 1px 1px #000000;
+  font-family: 'Great Vibes', cursive;
+
+}
+.index-cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 24px;
+  justify-content: space-between;
+  align-items: center;
+  // margin-left: px;
+  margin-bottom: 38px;
+}
+
+@media(max-width: 992px) {
+  .index-cards-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .index-cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+.index-title {
+  font-family: 'Great Vibes', cursive;
+  letter-spacing: 3;
+  position: relative;
+}
+.index-title :hover {
+color:#908F8B;
 }

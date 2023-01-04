@@ -1,19 +1,24 @@
-body {
-  background-color: white;
-}
+
 
 .show-container {
-  background-color: white;
+  background-image: url('https://res.cloudinary.com/dygywvyiq/image/upload/v1671373019/joanabossa/308189782_1495750840846329_7736143130357964402_n_jlws1f.jpg');
+  background-size: cover;
+  background-position: bottom;
+
+  height: 750px;
+  padding-top: 40px;
+
 }
 
 .show-bloc {
   background-color: white;
+  background-color: rgba(0, 0, 0, 0.60);
   display: flex;
   align-items: center;
   // justify-content: center;
   width: 80%;
   margin-top: 15px ;
-  box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
   margin-left: 150px;
   margin-bottom: 100px;
@@ -22,23 +27,54 @@ body {
 .show-h2 {
   text-align: center;
   padding-top: 15px;
+
+
+}
+
+.show-h2:hover {
+  color:#908F8B;
 }
 
 .show-img {
   text-align: center;
   display: flex;
   justify-content: center;
-  padding-left: 50px;
+  transition: transform .1s;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-right: 10px;
+
+}
+
+.show-img:hover {
+  -ms-transform: scale(1.2);
+-webkit-transform: scale(1.2);
+transform: scale(1.2);
+box-shadow: 0 0 15px rgba(21, 195, 198, 0.578);
 }
 
 .show-infos {
-  color: #636363;
+  color: white;
   text-align: left;
-  padding-left: 80px;
+  padding-left: 90px;
   padding: 50px;
+}
+.show-infos:hover {
+  color: turquoise;
+}
+.show-infos a{
+  color: pink;
+text-decoration: none;
+}
+.show-infos a:hover {
+  color: white
 }
 
 .show-price {
   font-weight: bold;
   font-size: large;
+  align-items: flex-end;
+  color :white;
+}
+.show-price:hover {
+  color:#908F8B;
 }

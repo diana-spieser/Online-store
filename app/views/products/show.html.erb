@@ -1,25 +1,28 @@
 <div class="show-container">
   <div class= "show-h2">
-
   </div>
   <div class="show-bloc">
     <div class= "show-img">
       <%= cl_image_tag @product.photo.key , crop: :fill , height: 600 , width: 700 %>
     </div>
     <div class= "show-infos">
-  <center> <h5><b>Name:<%= @product.name %>  </b></h5><br></center>
-
-      <p class='show-price'>Price:<%= @product.price %> € </p>
-      <p class='card-title'>Description:<%= @product.description %> </p> <br>
-   <a href="https://www.instagram.com/joanabossajewelry/">DM me on instagram to order<b> <i class="fab fa-instagram"></i></a>
+  <center> <h2><b><%= @product.name %></b></h2><br></center>
+      <p class='card-title'><span>Description:</span> <%= @product.description %></p><br>
+      <center><a href="https://www.instagram.com/joanabossajewelry/"> Limited quantities. Order now by simply sending me a DM me on Instagram!<b> <i class="fab fa-instagram"></i></a></center>
+      <br>
+       <center><p class='show-price'>Price:<%= @product.price %> € </p></center>
       </div>
     </div>
+    <center> <%= link_to 'Back to Products', products_path, class:"btn-index" %>
+         <%= link_to 'Back to Collections', categories_path, class:"btn-index" %>
+</center>
   </div>
 </div>
 <%# <%= link_to "edit", edit_product_path, class: "btn-blue" %>
 <%# <%= link_to 'delete', product_path(@product), class:"btn-blue", data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" }  %>
+
     </div>
-      <a class="btn-blue" href="/products">Back</a>
+
       <br>
       <br>
   </div>
