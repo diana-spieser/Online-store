@@ -7,7 +7,7 @@
 <div class="container index-cards-container">
   <%@category.products.each do |product| %>
   <div class="card-index">
-    <%= cl_image_tag product.photo.key, crop: :fill%>
+    <%= cl_image_tag product.photo.key %>
     <div class="card-index-infos">
       <div>
       <%= link_to product_path(product), class:"text-decoration-none" do %>

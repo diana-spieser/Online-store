@@ -9,7 +9,7 @@
     <div class="container index-cards-container">
       <%@categories.each do |category| %>
         <div class="card-index">
-          <%= cl_image_tag category.photo.key, crop: :fill%>
+          <%= cl_image_tag category.photo.key %>
           <div class="card-index-infos">
           <div>
           <%= link_to category_path(category), class:"text-decoration-none" do %>
