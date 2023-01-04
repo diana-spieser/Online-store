@@ -7,11 +7,11 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-     <% if action_name == "index" && controller_name == "products"  || controller_name == "categories"%>
+    <% if action_name == "index" && controller_name == "products"  || controller_name == "categories"%>
       <form class="d-flex" role="search">
-        <%= form_with url: products_path, method: :get, class: "d-flex" do %>
-          <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find the prefect match..." %>
-          <button class="btn btn-blue" type="submit">Search</button>
+        <%= form_with url: products_path, method: :get, class: "d-flex " do %>
+          <%= text_field_tag :query, params[:query], class: "form-control search", placeholder: "Find the prefect match..." %>
+          <%= submit_tag "Search", class: "btn-search" %>
         <% end %>
       </form>
     <% end %>
@@ -22,9 +22,10 @@
           <%# <li class="nav-item active"> %>
             <%# <%= link_to "Home", "#", class: "nav-link" %>
           <%# </li> %>
-          <li class="nav-item">
+          <li class="nav-item dropdown">
             <%= link_to "Collections", "/categories", class: "nav-link" %>
           </li>
+
           <li class="nav-item">
             <%= link_to "Products", "/products", class: "nav-link" %>
           </li>

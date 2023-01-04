@@ -35,3 +35,22 @@
   margin-bottom: 30px;
   text-shadow: 0 10px 30px rgba(0,0,0,.1);
 }
+
+.banner-about {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+
+.banner-about h1 {
+  margin: 0;
+  color:  #D5D0BD;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+  font-family: 'Monserrat', sans-serif;
+  text-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+.banner-about h1:hover {
+  color: white;
+}

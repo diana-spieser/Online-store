@@ -1,27 +1,27 @@
 body {
-  color: #494949;
+
   font-size: 18px;
   line-height: 1.6;
   font-weight: lighter;
-  font-family: 'Lora', serif;
+
   margin: 0;
   position: relative;
   height: auto;
 
 }
-h1, h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
-}
+// h1, h2 {
+//   font-family: 'Montserrat', sans-serif;
+//   font-weight: bold;
+// }
 
-h2 {
-  color: #A0A0A0;
-  font-weight: normal;
-}
-a {
-  text-decoration: none;
-  color: #4352A1;
-}
+// h2 {
+//   color: #A0A0A0;
+//   font-weight: normal;
+// }
+// a {
+//   text-decoration: none;
+//   color: #4352A1;
+// }
 /* Media queries */
 @media(max-width: 900px) {
   .container {
