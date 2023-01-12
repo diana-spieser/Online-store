@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Contact me</h1>
+  <%= form_for @contact do |f| %>
+    <div class="col-md-6">
+      <%= f.label :name %></br>
+      <%= f.text_field  :name, required: true, class: "contact-form-text-area" %></br>
+
+      <%= f.label :email %></br>
+      <%= f.text_field :email, required: true, class: "contact-form-text-area" %></br>
+
+      <%= f.label :message %></br>
+      <%= f.text_area :message, rows: 8, cols: 40, required: true, class: "contact-form-text-area",
+            placeholder: "Send me a message"%></br>
+
+      <div class= "d-none">
+        <%= f.label :nickname %>
+        <%= f.text_field :nickname, :hint => 'Leave this field blank!' %>
+      </div>
+
+      <%= f.submit 'Send Message', class: 'btn-index' %>
+    </div>
+  <% end %>
+</div>
