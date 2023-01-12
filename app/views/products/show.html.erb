@@ -1,3 +1,9 @@
+<!-- Meta content singe product -->
+<% content_for :meta_title, "#{@product.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @product.description %>
+<% content_for :meta_image, cl_image_path(@product.photo.key) if @product.photo.attached? %>
+
+<!-- Product Display -->
 <div class="show-container">
   <div class="card-show">
     <%= cl_image_tag @product.photo.key%>
