@@ -33,6 +33,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @contact = Contact.new
 
   end
 

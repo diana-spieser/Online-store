@@ -40,6 +40,7 @@ Rails.application.configure do
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
 
+
   ActionMailer::Base.smtp_settings = {
     :port           => ENV['MAILGUN_SMTP_PORT'],
     :address        => ENV['MAILGUN_SMTP_SERVER'],
@@ -51,6 +52,8 @@ Rails.application.configure do
   ActionMailer::Base.delivery_method = :smtp
   config.active_storage.service = :cloudinary
 
+
+  config.force_ssl = true
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
   # config.action_cable.url = "wss://example.com/cable"
