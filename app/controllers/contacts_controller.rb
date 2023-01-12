@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :new, :create, :sent]
   def new
     @contact = Contact.new
   end
@@ -7,10 +8,13 @@ class ContactsController < ApplicationController
     @contact = Contact.new(params[:contact])
     @contact.request = request
     if @contact.deliver
-      flash.now[:success] = 'Message sent!'
+      redirect_to action: :sent
     else
       flash.now[:error] = 'Could not send message'
-      render :new
+      render :new, status: :unprocessable_entity
     end
+  end
+
+  def sent
   end
 end
