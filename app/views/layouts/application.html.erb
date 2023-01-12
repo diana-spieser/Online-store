@@ -24,6 +24,13 @@
     <meta name="twitter:description" content="<%= meta_description %>">
     <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
     <meta name="twitter:image:src" content="<%= meta_image %>">
+    <!-- Favicon -->
+  <%= favicon_link_tag "favicon.png", rel: "icon", type: "image/png" %>
+  <!-- Mobile content -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <!-- Partial Favicons -->
+  <%= render 'shared/ios_pwa_links' %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
