@@ -1,42 +1,16 @@
-<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="https://res.cloudinary.com/dygywvyiq/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1672734371/joanabossa/316366123_206249411763235_8552926563415702515_n_hu3l1p.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5></h5>
-        <p></p>
+<div class="container-custom">
+  <div class="grid second-nav">
+      <div class="column-xs-12">
+        <nav>
+          <ol class="breadcrumb-list">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/">Collections</a></li>
+            <li class="breadcrumb-item active">Products</li>
+          </ol>
+        </nav>
       </div>
     </div>
-    <div class="carousel-item">
-      <img src="https://res.cloudinary.com/dygywvyiq/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1671373019/joanabossa/103986176_269440044363212_455038791219377184_n_mppdcg.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Our best sellers</h5>
-        <p></p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="https://res.cloudinary.com/dygywvyiq/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1671439866/joanabossa/26870028_2087593434819292_1692649308593061888_n_hjpnho.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Surf stories</h5>
-        <p>For the surf lovers</p>
-      </div>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-</div> <%= link_to "← Back", categories_path, class:"text-decoration-none text-dark ms-5 " %>
+    <br>
 <div class='container'>
     <div class="index-cards-container">
       <%@products.each do |product| %>
@@ -61,5 +35,5 @@
       </div>
       <%end%>
     </div>
-
+</div>
 <center> <%= link_to 'See all categories', categories_path, class:"btn-blue" %></center>

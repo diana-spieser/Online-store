@@ -1,32 +1,41 @@
-<div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @category.photo.attached? ? cl_image_path(@category.photo.key) : asset_path('product_background.jpg') %>)">
-  <h1><%= @category.name %></h1>
-</div>
-  <%= link_to "← Back", categories_path, class:"text-decoration-none text-dark ms-5 " %>
-  <div class='container'>
-    <div class="container index-cards-container">
-      <%@category.products.each do |product| %>
-      <div class="card-index">
-        <% count = 0 %>
-        <% product.photos.each do |photo| %>
-          <%= cl_image_tag photo.key %>
-          <% count += 1 %>
-          <% break if count == 1 %>
-        <% end %>
-        <div class="card-index-infos">
-          <div>
-            <%= link_to product_path(product), class:"text-decoration-none" do %>
-            <h2><%=product.name%></h2>
-            <p><%=product.description%></p>
-            <a href="https://www.instagram.com/joanabossajewelry/"><i class="fab fa-instagram"></i></a>
-            <% end %>
-          </div>
-
-            <h2 class="card-index-pricing">€<%= product.price.round(0) %></h2>
-            <%= image_tag "logo.png", alt: "alttext", class: "card-index-user avatar-bordered"%>
+<div class="container-custom">
+  <div class="grid second-nav">
+        <div class="column-xs-12">
+          <nav>
+            <ol class="breadcrumb-list">
+              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item"><a href="/">Collections</a></li>
+              <li class="breadcrumb-item active"><%= @category.name %></li>
+            </ol>
+          </nav>
         </div>
       </div>
-      <%end%>
-    </div>
-      <center><%= link_to 'Back to All Products', products_path, class:"btn-index" %>
-      <%= link_to 'Back to Home', categories_path, class:"btn-index" %></center>
+      <br>
+    <div class='container'>
+      <div class="container index-cards-container">
+        <%@category.products.each do |product| %>
+        <div class="card-index">
+          <% count = 0 %>
+          <% product.photos.each do |photo| %>
+            <%= cl_image_tag photo.key %>
+            <% count += 1 %>
+            <% break if count == 1 %>
+            <% end %>
+              <div class="card-index-infos">
+            <div>
+              <%= link_to product_path(product), class:"text-decoration-none" do %>
+              <h2><%=product.name%></h2>
+              <p><%=product.description%></p>
+              <a href="https://www.instagram.com/joanabossajewelry/"><i class="fab fa-instagram"></i></a>
+              <% end %>
+            </div>
+              <h2 class="card-index-pricing">€<%= product.price.round(0) %></h2>
+              <%= image_tag "logo.png", alt: "alttext", class: "card-index-user avatar-bordered"%>
+          </div>
+        </div>
+        <%end%>
+      </div>
+    <center><%= link_to 'Back to All Products', products_path, class:"btn-index" %>
+ <%= link_to 'Back to Home', categories_path, class:"btn-index" %></center>
       <br><br>
+</div>
