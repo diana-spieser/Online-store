@@ -3,7 +3,11 @@
   background: $beige;
   color: $cardheadline;
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
-  font-family: 'Great Vibes', cursive;
+  font-family:  'Pontano Sans', sans-serif;
+
+}
+a.nav-link {
+  margin-right: 10px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -16,4 +20,22 @@
 
 .search {
   border-radius: 50px;
+}
+.badge {
+  background-color: #6394F8;
+  border-radius: 10px;
+  color: white;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1;
+  padding: 3px 3px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin-right: 10px;
+}
+.fa-shopping-cart::before {
+  content: "\f07a";
+  margin-top: 5px;
+  font-size: 24px;
 }

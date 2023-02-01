@@ -18,10 +18,6 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <%# <% if user_signed_in? %>
-          <%# <li class="nav-item active"> %>
-            <%# <%= link_to "Home", "#", class: "nav-link" %>
-          <%# </li> %>
           <li class="nav-item dropdown">
             <%= link_to "Home", "/categories", class: "nav-link" %>
           </li>
@@ -32,9 +28,10 @@
           <li class="nav-item">
             <%= link_to "About", "/about", class: "nav-link" %>
           </li>
-          <li class="nav-item">
+          <%# <li class="nav-item">
             <%= link_to "Contact", "/contacts/new", class: "nav-link" %>
-          </li>
+          <%# </li> %>
+          <li nav-item><a href="/cart" id="cartoooo"><i class="fa fa-shopping-cart nav-link"></i><span class="badge nav-link"><%= turbo_frame_tag  do %><%=@cart.orderables.sum(:quantity) %><% end %></span></a></li>
           <li class="nav-item dropdown">
             <%= image_tag "https://res.cloudinary.com/dygywvyiq/image/upload/v1672743926/joanabossa/user_l1elzu.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -42,8 +39,6 @@
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
             </div>
           </li>
-        <%# <% else %>
-        <%# <% end %>
       </ul>
     </div>
   </div>

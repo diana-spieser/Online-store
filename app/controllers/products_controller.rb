@@ -34,6 +34,7 @@ class ProductsController < ApplicationController
 
   def show
     @contact = Contact.new
+    @products = Product.all
 
   end
 
@@ -60,6 +61,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :description, :price, :quantity, :photo, :category_id)
+    params.require(:product).permit(:name, :description, :price, :quantity,:category_id, :photos, photos: [])
   end
 end

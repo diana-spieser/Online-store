@@ -1,0 +1,76 @@
+<%= turbo_frame_tag "cart" do %>
+<div id="shopping">
+
+<h1>Shopping Cart</h1>
+
+<div class="shopping-cart">
+
+  <div class="column-labels">
+    <label class="product-image">Image</label>
+    <label class="product-details">Product</label>
+    <label class="product-price">Price</label>
+    <label class="product-quantity">Quantity</label>
+    <label class="product-removal">Remove</label>
+    <label class="product-line-price">Total</label>
+  </div>
+
+<% if @cart.orderables.count > 0 %>
+  <% @cart.orderables.each do |orderable| %>
+  <% product = orderable.product %>
+    <div id="<%= "cart-#{product.id}" %>">
+  <div class="product">
+    <div class="product-image">
+        <% count = 0 %>
+        <% product.photos.each do |photo| %>
+          <%= cl_image_tag photo.key %>
+          <% count += 1 %>
+          <% break if count == 1 %>
+        <% end %>
+    </div>
+    <div class="product-details">
+      <div class="product-title"><%=product.name%></div>
+      <p class="product-description"><%=product.description%></p>
+    </div>
+    <div class="product-price"><%=product.price%></div>
+    <div class="product-quantity">
+1
+    </div>
+    <div class="product-removal">
+    <%= form_with(url: cart_remove_path) do |f| %>
+        <%= f.hidden_field :id, value: orderable.id %>
+        <%= f.submit "Delete", class: "remove-product" %>
+
+    </div>
+    <div class="product-line-price"> <%= orderable.total %></div>
+  </div>
+    <% end %>
+  <% end %>
+  <% else %>
+    <p>Your cart is empty</p>
+  <% end %>
+  <% end %>
+
+  <div class="totals">
+    <div class="totals-item">
+      <label>Subtotal</label>
+      <div class="totals-value" id="cart-subtotal"><%= @cart.total %></div>
+    </div>
+    <%# <div class="totals-item">
+      <label>Tax (5%)</label>
+      <div class="totals-value" id="cart-tax">3.60</div>
+    </div> %>
+    <div class="totals-item">
+      <label>Shipping</label>
+      <div class="totals-value" id="cart-shipping">3.00</div>
+    </div>
+    <div class="totals-item totals-item-total">
+      <label>Grand Total</label>
+      <div class="totals-value" id="cart-total"><%= @cart.total + 3 %></div>
+    </div>
+  </div>
+
+      <button class="checkout">Checkout</button>
+
+</div>
+
+</div> <!--end div id shopping -->

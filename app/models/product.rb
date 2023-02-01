@@ -4,5 +4,7 @@ class Product < ApplicationRecord
   validates :description, presence: true
   belongs_to :user
   belongs_to :category
-  has_one_attached :photo
+  has_many_attached :photos
+  has_many :orderables
+  has_many :carts, through: :orderables
 end

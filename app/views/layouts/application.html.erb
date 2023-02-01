@@ -34,6 +34,7 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   </head>
 
   <body>
@@ -43,6 +44,7 @@
     <%= render "shared/navbar" %>
     <%end%>
     <%= render "shared/flashes" %>
+    <%# <%= render partial: "cart/cart" if @render_cart %>
 
 
 

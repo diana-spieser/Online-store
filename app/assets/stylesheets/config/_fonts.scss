@@ -1,10 +1,10 @@
 // Import Google fonts
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Pontano+Sans');
 
 // Define fonts for body and headers
-$body-font: "font-family: 'Monserrat', sans-serif;", "Helvetica", "sans-serif";
-$headers-font: "Montserrat", "Helvetica", "sans-serif";
+$body-font:    'Pontano Sans', sans-serif;
+$headers-font:   'Pontano Sans', sans-serif;
