@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   get "about", to: "pages#about"
   resources :categories, only: [:index, :show]
   resources :products, only: [:index, :show]
+  get 'cart', to: 'cart#show'
+  post 'cart/add'
+  post 'cart/remove'
 end

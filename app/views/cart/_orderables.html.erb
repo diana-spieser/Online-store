@@ -1,0 +1,29 @@
+
+<% @cart.orderables.each do |orderable| %>
+  <% product = orderable.product %>
+  <div id="<%= "cart-#{product.id}" %>">
+      <%= link_to product_path(product), class:"text-decoration-none" do %>
+        <h2><%=product.name%></h2>
+        <p><%=product.description%></p>
+
+        <% end %>
+      </div>
+      <h2 class="card-index-pricing"><%=product.price%>lv</h2>
+      <%= image_tag "logo.png", alt: "alttext", class: "card-trip-user avatar-bordered" %>
+    </div>
+  </div>
+ <%= form_with(url: cart_add_path) do |f| %>
+        <%= f.hidden_field :id, value: product.id %>
+        <%= f.number_field :quantity, value: orderable.quantity, min: 0 %>
+        <%= f.submit "Add To Cart" %>
+      <% end %>
+      <%= form_with(url: cart_remove_path) do |f| %>
+        <%= f.hidden_field :id, value: orderable.id %>
+        <%= f.submit "X" %>
+      <% end %>
+        <strong>Total:</strong>
+        <%= orderable.total %>
+  <%end%>
+
+
+</div>

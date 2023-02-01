@@ -6,7 +6,12 @@
     <div class="container index-cards-container">
       <%@category.products.each do |product| %>
       <div class="card-index">
-        <%= cl_image_tag product.photo.key %>
+        <% count = 0 %>
+        <% product.photos.each do |photo| %>
+          <%= cl_image_tag photo.key %>
+          <% count += 1 %>
+          <% break if count == 1 %>
+        <% end %>
         <div class="card-index-infos">
           <div>
             <%= link_to product_path(product), class:"text-decoration-none" do %>
@@ -15,7 +20,8 @@
             <a href="https://www.instagram.com/joanabossajewelry/"><i class="fab fa-instagram"></i></a>
             <% end %>
           </div>
-            <h2 class="card-index-pricing"><%= product.price %>lv</h2>
+
+            <h2 class="card-index-pricing">€<%= product.price.round(0) %></h2>
             <%= image_tag "logo.png", alt: "alttext", class: "card-index-user avatar-bordered"%>
         </div>
       </div>

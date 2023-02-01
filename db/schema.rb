@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_02_181700) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_30_133814) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_02_181700) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -49,10 +54,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_02_181700) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "orderables", force: :cascade do |t|
+    t.bigint "product_id", null: false
+    t.bigint "cart_id", null: false
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cart_id"], name: "index_orderables_on_cart_id"
+    t.index ["product_id"], name: "index_orderables_on_product_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.integer "price"
+    t.decimal "price"
     t.integer "quantity"
     t.bigint "user_id", null: false
     t.bigint "category_id", null: false
@@ -77,6 +92,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_02_181700) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "orderables", "carts"
+  add_foreign_key "orderables", "products"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "users"
 end

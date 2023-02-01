@@ -1,51 +1,93 @@
-<!-- Meta content singe product -->
-<% content_for :meta_title, "#{@product.name} is on #{DEFAULT_META["meta_product_name"]}" %>
-<% content_for :meta_description, @product.description %>
-<% content_for :meta_image, cl_image_path(@product.photo.key) if @product.photo.attached? %>
-
-<!-- Product Display -->
-<div class="show-container">
-  <div class="card-show">
-    <%= cl_image_tag @product.photo.key%>
-    <div class="card-show-infos">
-      <div>
-        <h2><%= @product.name %></h2>
-        <p><%= @product.description %></p>
-        <p> <a href="https://www.instagram.com/joanabossajewelry/"> Limited quantities. Order now by simply sending me a DM me on Instagram!<b> <i class="instagram"></i></a></p>
+<body class="custom">
+<div class="my-page">
+<div class="container-custom">
+    <div class="grid second-nav">
+      <div class="column-xs-12">
+        <nav>
+          <ol class="breadcrumb-list">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/products">Products</a></li>
+            <li class="breadcrumb-item active"><%= @product.name %></li>
+          </ol>
+        </nav>
       </div>
-        <h2 class="card-show-pricing">Price:<%= @product.price %>$</h2>
-        <%= image_tag "logo.png", alt: "alttext", class: "card-show-logo avatar-bordered" %>
+    </div>
+    <div class="grid product">
+      <div class="column-xs-12 column-md-7">
+        <div class="product-gallery">
+          <div class="product-image-show">
+          <% count = 0 %>
+          <% @product.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, class: "active", id: "current-picture" %>
+          <% count += 1 %>
+          <% break if count == 1 %>
+          <% end %>
+          </div>
+          <ul class="image-list">
+          <% @product.photos.each do |photo| %>
+            <li class="image-item"><%= cl_image_tag photo.key, id:"other-picture" %></li>
+          <% end %>
+          </ul>
+        </div>
+      </div>
+      <div class="column-xs-12 column-md-5">
+        <h1><%= @product.name %></h1>
+        <h2>€ <%=@product.price.round(0)%></h2>
+        <div class="description">
+          <p><%= @product.description %></p>
+        </div>
+
+      <div id="<%= dom_id @product %>">
+        <%= form_with(url: cart_add_path) do |f| %>
+        <%= f.hidden_field :id, value: @product.id %>
+        <%= f.number_field :quantity, value: 1, min: 1 %>
+        <%= f.submit "Add To Cart", class:"add-to-cart" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="grid related-products">
+      <div class="column-xs-12">
+        <h3>You may also like</h3>
+      </div>
+
+    <% @products.last(3).each do |product| %>
+    <% next if product == @current_product %>
+      <div class="column-xs-12 column-md-4">
+        <% count = 0 %>
+        <% product.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, id:"you-may-like" %>
+          <% count += 1 %>
+          <% break if count == 1 %>
+        <% end %>
+        <%= link_to product_path(product), class:"text-decoration-none" do %>
+        <h4><%= product.name %></h4>
+        <% end %>
+        <p class="price">$<%= product.price %></p>
+      </div>
+          <% end %>
+
     </div>
   </div>
-    <center><%= link_to 'Back to Products', products_path, class:"btn-index" %>
-    <%= link_to 'Back to Collections', categories_path, class:"btn-index" %></center>
-<%# <%= link_to "edit", edit_product_path, class: "btn-blue" %>
-<%# <%= link_to 'delete', product_path(@product), class:"btn-blue", data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" }  %>
-<br>
-<br>
-<br>
-<div class="container">
-  <h1>You like this unique piece of jewerly? Order now by sending me a message!</h1>
-  <%= form_for @contact do |f| %>
-    <div class="col-md-6">
-      <%= f.label :name %></br>
-      <%= f.text_field  :name, required: true, class: "contact-form-text-area" %></br>
-
-      <%= f.label :email %></br>
-      <%= f.text_field :email, required: true, class: "contact-form-text-area" %></br>
-
-      <%= f.label :message %></br>
-      <%= f.text_area :message, rows: 8, cols: 40, required: true, class: "contact-form-text-area",
-            placeholder: "Send me a message"%></br>
-
-      <div class= "d-none">
-        <%= f.label :nickname %>
-        <%= f.text_field :nickname, :hint => 'Leave this field blank!' %>
-      </div>
-
-      <%= f.submit 'Send Message', class: 'btn-index' %>
     </div>
-  <% end %>
-</div>
+</main>
+    <center>
+    <%= link_to 'Back to Products', products_path, class:"btn-index" %>
+    <%= link_to 'Back to Collections', categories_path, class:"btn-index" %></center>
 
-</div>
+
+</body>
+
+<script>const activeImage = document.querySelector(".product-image-show .active");
+const productImages = document.querySelectorAll(".image-list img");
+const navItem = document.querySelector('a.toggle-nav');
+
+function changeImage(e) {
+  activeImage.src = e.target.src;
+}
+
+function toggleNavigation(){
+  this.nextElementSibling.classList.toggle('active');
+}
+
+productImages.forEach(image => image.addEventListener("click", changeImage));
+</script>
