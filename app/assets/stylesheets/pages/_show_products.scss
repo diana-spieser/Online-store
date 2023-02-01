@@ -1,15 +1,7 @@
 
-@import url('https://fonts.googleapis.com/css?family=Pontano+Sans');
 
 
-$white: #fff;
-$black: #333;
-$lightergray: #d5d5d5;
-$lightgray: #f0f3f1;
-$gray: #e3dddd;
-$text: #888;
-$button: #3e3e3f;
-$button-hover: #565657;
+
 
 * {
   box-sizing: border-box;
@@ -80,7 +72,7 @@ body.custom {
 
  .my-page img {
   max-width: 100%;
-  height: auto;
+  // height: auto;
   object-fit: cover;
   margin-bottom: 10px;
 }
@@ -90,10 +82,10 @@ body.custom {
   height: 300px;
   width: 100%;
 }
-#current-picture {
-  height: 430px;
-  width: 100%;
-}
+// #current-picture {
+//   height: 430px;
+//   width: 100%;
+// }
 
 #other-picture {
   height: 200px;
@@ -231,7 +223,8 @@ body.custom {
   .product-image-show {
     display: block;
      img {
-      height: 58vh;
+      height: 450px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
       &.active {
         display: block;
         margin: 0 0 0.75rem 0;
@@ -252,6 +245,7 @@ body.custom {
     }
      img {
       height: 13rem;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
       width: 100%;
       transition: opacity 0.3s ease;
       cursor: pointer;
@@ -401,4 +395,12 @@ $lg: 75rem;
 
 .related-products {
   border-top: 0.0625rem solid #e3dddd !important;
+}
+@media only screen and (max-width: 480px) {
+  #other-picture {
+      width: 100%;
+      height: auto;
+      max-height: 240px; /* set a maximum height */
+      margin-top: 10px;
+  }
 }

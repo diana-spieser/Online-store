@@ -1,75 +1,81 @@
 <body class="custom">
-<div class="my-page">
-<div class="container-custom">
-    <div class="grid second-nav">
-      <div class="column-xs-12">
-        <nav>
-          <ol class="breadcrumb-list">
-            <li class="breadcrumb-item"><a href="/">Home</a></li>
-            <li class="breadcrumb-item"><a href="/products">Products</a></li>
-            <li class="breadcrumb-item active"><%= @product.name %></li>
-          </ol>
-        </nav>
-      </div>
-    </div>
-    <div class="grid product">
-      <div class="column-xs-12 column-md-7">
-        <div class="product-gallery">
-          <div class="product-image-show">
-          <% count = 0 %>
-          <% @product.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, class: "active", id: "current-picture" %>
-          <% count += 1 %>
-          <% break if count == 1 %>
-          <% end %>
+  <div class="my-page">
+    <div class="container-custom">
+        <div class="grid second-nav">
+          <div class="column-xs-12">
+            <nav>
+              <ol class="breadcrumb-list">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/products">Products</a></li>
+                <li class="breadcrumb-item active"><%= @product.name %></li>
+              </ol>
+            </nav>
           </div>
-          <ul class="image-list">
-          <% @product.photos.each do |photo| %>
-            <li class="image-item"><%= cl_image_tag photo.key, id:"other-picture" %></li>
-          <% end %>
-          </ul>
         </div>
-      </div>
-      <div class="column-xs-12 column-md-5">
-        <h1><%= @product.name %></h1>
-        <h2>€ <%=@product.price.round(0)%></h2>
-        <div class="description">
-          <p><%= @product.description %></p>
+        <div class="grid product">
+          <div class="column-xs-12 column-md-7">
+            <div class="product-gallery">
+              <div class="product-image-show">
+              <% count = 0 %>
+              <% @product.photos.each do |photo| %>
+              <%= cl_image_tag photo.key, class: "active" %>
+              <% count += 1 %>
+              <% break if count == 1 %>
+              <% end %>
+              </div>
+              <ul class="image-list">
+              <% @product.photos.each do |photo| %>
+                <li class="image-item"><%= cl_image_tag photo.key, id:"other-picture" %></li>
+              <% end %>
+              </ul>
+            </div>
+          </div>
+          <div class="column-xs-12 column-md-5">
+            <h1><%= @product.name %></h1>
+            <h2>€ <%=@product.price.round(0)%></h2>
+            <div class="description">
+              <p><%= @product.description %></p>
+            </div>
+
+          <div id="<%= dom_id @product %>">
+            <%= form_with(url: cart_add_path) do |f| %>
+            <%= f.hidden_field :id, value: @product.id %>
+            <%= f.number_field :quantity, value: 1, min: 1 %>
+            <%= f.submit "Add To Cart", class:"add-to-cart" %>
+            <% end %>
+          </div>
         </div>
+        <div class="grid related-products">
+          <div class="column-xs-12">
+            <h3>You may also like</h3>
+          </div>
 
-      <div id="<%= dom_id @product %>">
-        <%= form_with(url: cart_add_path) do |f| %>
-        <%= f.hidden_field :id, value: @product.id %>
-        <%= f.number_field :quantity, value: 1, min: 1 %>
-        <%= f.submit "Add To Cart", class:"add-to-cart" %>
-        <% end %>
-      </div>
-    </div>
-    <div class="grid related-products">
-      <div class="column-xs-12">
-        <h3>You may also like</h3>
-      </div>
 
-    <% @products.last(3).each do |product| %>
-    <% next if product == @current_product %>
-      <div class="column-xs-12 column-md-4">
+    <div class="index-cards-container">
+      <%@products.first(3).each do |product| %>
+      <div class="card-index">
         <% count = 0 %>
         <% product.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, id:"you-may-like" %>
+          <%= cl_image_tag photo.key %>
           <% count += 1 %>
           <% break if count == 1 %>
         <% end %>
-        <%= link_to product_path(product), class:"text-decoration-none" do %>
-        <h4><%= product.name %></h4>
-        <% end %>
-        <p class="price">$<%= product.price %></p>
+        <div class="card-index-infos">
+          <div>
+            <%= link_to product_path(product), class:"text-decoration-none" do %>
+            <h2><%=product.name%></h2>
+            <p><%= truncate(product.description, length: 40, separator: ' ', omission: '...') %></p>
+            <a href="https://www.instagram.com/joanabossajewelry/"><i class="fab fa-instagram"></i></a>
+            <% end %>
+          </div>
+            <h2 class="card-index-pricing">€<%= product.price.round(0) %></h2>
+            <%= image_tag "logo.png", alt: "alttext", class: "card-index-user avatar-bordered"%>
+        </div>
       </div>
-          <% end %>
+      <%end%>
 
-    </div>
-  </div>
-    </div>
-</main>
+        </div>
+    </main>
     <center>
     <%= link_to 'Back to Products', products_path, class:"btn-index" %>
     <%= link_to 'Back to Collections', categories_path, class:"btn-index" %></center>
@@ -77,17 +83,16 @@
 
 </body>
 
-<script>const activeImage = document.querySelector(".product-image-show .active");
-const productImages = document.querySelectorAll(".image-list img");
-const navItem = document.querySelector('a.toggle-nav');
 
-function changeImage(e) {
-  activeImage.src = e.target.src;
-}
+<script>
+(function() {
+  const activeImage = document.querySelector(".product-image-show .active");
+  const productImages = document.querySelectorAll(".image-list img");
 
-function toggleNavigation(){
-  this.nextElementSibling.classList.toggle('active');
-}
+  function changeImage(e) {
+    activeImage.src = e.target.src;
+  }
 
-productImages.forEach(image => image.addEventListener("click", changeImage));
+  productImages.forEach(image => image.addEventListener("click", changeImage));
+})();
 </script>
