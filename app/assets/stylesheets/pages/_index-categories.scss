@@ -46,11 +46,24 @@
   .index-cards-container {
     grid-template-columns: 1fr 1fr;
   }
+  .cover-index {
+    height:600px;
+    width: 100%;
+  }
+
 }
 
 @media(max-width: 768px) {
   .index-cards-container {
     grid-template-columns: 1fr;
+  }
+  .cover-index {
+    height:400px;
+    width: 100%;
+  }
+  .cover-index {
+    height:600px;
+    width: 100%;
   }
 }
 .index-title {
@@ -105,4 +118,15 @@ color:#908F8B;
 }
 #go-up-btn-one:hover {
   background-color: $sun;
+}
+@media (max-width: 768px) {
+  .cover-index {
+    height: 500px;
+  }
+  .cover-index h1 {
+    font-size: 40px;
+  }
+  .cover-index p {
+    font-size: 18px;
+  }
 }

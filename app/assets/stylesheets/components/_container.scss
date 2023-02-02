@@ -1,6 +1,7 @@
 .container {
   width: 100%;
 
+
 }
 
 @media (max-width: 960px) {
@@ -21,5 +22,6 @@
   /* For a screen < 540px, this CSS will be read */
   .container {
     width: 300px;
+    --bs-gutter-x: 0;
   }
 }
