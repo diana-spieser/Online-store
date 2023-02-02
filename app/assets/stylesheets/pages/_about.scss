@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500|Jost:400,500,600&display=swap");
+// @import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500|Jost:400,500,600&display=swap");
 
 
 .container-about {
@@ -11,13 +11,13 @@
   background-position: center;
   background-attachment: fixed;
   min-height: 100vh;
-  display: flex;
+  // display: flex;
   flex-wrap: wrap;
   padding: 20px;
 }
 
 .card {
-  max-width: 340px;
+  max-width: 380px;
   margin: auto;
   overflow-y: auto;
   position: relative;
@@ -172,7 +172,7 @@
   font-size: 14px;
   margin: 0;
   font-weight: 400;
-  font-family: "DM Sans", sans-serif;
+
   text-align: justify;
 }
 
@@ -230,7 +230,7 @@
     cursor: pointer;
     color: #5c5c6d;
     transition: 0.3s;
-    font-family: "Jost", sans-serif;
+
     font-weight: 500;
     outline: 0;
     border-bottom: 3px solid transparent;
@@ -328,7 +328,7 @@
   font-size: 13px;
   color: #6f6f7b;
   line-height: 1.5;
-  font-family: "DM Sans", sans-serif;
+
 }
 
 .card-contact-wrapper {
@@ -340,7 +340,7 @@
   align-items: center;
   font-size: 13px;
   color: #6f6f7b;
-  font-family: "DM Sans", sans-serif;
+
   line-height: 1.6;
   cursor: pointer;
 
@@ -376,6 +376,6 @@
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
-  font-family: "Jost", sans-serif;
+
   transition: 0.3s;
 }

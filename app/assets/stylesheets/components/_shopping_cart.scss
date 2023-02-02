@@ -126,7 +126,7 @@ label {
   .remove-product {
     border: 0;
     padding: 4px 8px;
-    background-color: #c66;
+    background-color: $ocean;
     color: #fff;
     font-weight: 800;
     font-size: 12px;
@@ -134,7 +134,7 @@ label {
   }
 
   .remove-product:hover {
-    background-color: #a44;
+    background-color: $sun;
   }
 }
 

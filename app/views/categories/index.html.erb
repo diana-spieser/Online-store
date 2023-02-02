@@ -1,12 +1,26 @@
-
-<div class="cover-index mb-4 d-flex align-items-center justify-content-center">
-  <div class="text-center text-white">
-    <h1>Joanabossa </h1>
-      <p><span data-controller="typed-js"></span></p>
+<!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+  <div class="box-feature">
+    <div class="cover-index mb-4 d-flex align-items-center justify-content-center">
+    <div class="text-top-center text-white">
+      <h1>Joanabossa </h1>
+        <p><span data-controller="typed-js"></span></p>
+    </div>
   </div>
 </div>
+<div class="container-custom">
+  <div class="grid second-nav">
+      <div class="column-xs-12">
+        <nav>
+          <ol class="breadcrumb-list">
+            <li class="breadcrumb-item"><a href="/about">About</a></li>
+            <li class="breadcrumb-item"><a href="/products">Products</a></li>
+            <li class="breadcrumb-item active">Collections</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <br>
 <div class='container'>
-  <center><h2 class='index-title'><b>Choose a story...</b></h2></center>
     <div class="container index-cards-container">
       <%@categories.each do |category| %>
         <div class="card-index">
@@ -23,8 +37,18 @@
   </div>
   <%end%>
 </div>
-<center> <%= link_to 'All products', products_path, class:"btn-index" %></center>
+<center> <i class="fa-regular fa-circle-up"id="go-up-btn"></i></center>
  <br>
  <br>
  <br>
  <br>
+
+<script>
+(function() {
+const goUpBtn = document.querySelector("#go-up-btn");
+
+goUpBtn.addEventListener("click", function() {
+window.scrollTo({ top: 0, behavior: "smooth" });
+});
+})();
+</script>

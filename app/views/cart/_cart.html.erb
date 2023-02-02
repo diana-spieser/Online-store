@@ -61,11 +61,26 @@
     </div> %>
     <div class="totals-item">
       <label>Shipping</label>
-      <div class="totals-value" id="cart-shipping">3.00</div>
+      <div class="totals-value" id="cart-shipping">
+      <% if @cart.orderables.count == 0 %>
+      0.00
+    <% elsif @cart.orderables.count <= 3 %>
+      3.00
+    <% else %>
+      6.00
+    <% end %>
+    </div>
     </div>
     <div class="totals-item totals-item-total">
-      <label>Grand Total</label>
-      <div class="totals-value" id="cart-total"><%= @cart.total + 3 %></div>
+      <label>Total</label>
+      <div class="totals-value" id="cart-total">
+      <% if @cart.orderables.count == 0 %>
+    <%= @cart.total %>
+  <% elsif @cart.orderables.count <= 3 %>
+    <%= @cart.total + 3 %>
+  <% else %>
+    <%= @cart.total + 6 %>
+  <% end %></div>
     </div>
   </div>
 
