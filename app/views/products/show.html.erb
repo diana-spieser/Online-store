@@ -5,7 +5,7 @@
           <div class="column-xs-12">
             <nav>
               <ol class="breadcrumb-list">
-                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/about">About</a></li>
                 <li class="breadcrumb-item"><a href="/products">Products</a></li>
                 <li class="breadcrumb-item active"><%= @product.name %></li>
               </ol>
@@ -40,7 +40,7 @@
           <div id="<%= dom_id @product %>">
             <%= form_with(url: cart_add_path) do |f| %>
             <%= f.hidden_field :id, value: @product.id %>
-            <%= f.number_field :quantity, value: 1, min: 1 %>
+            <%= f.hidden_field :quantity, value: 1, min: 1 %>
             <%= f.submit "Add To Cart", class:"add-to-cart" %>
             <% end %>
           </div>
