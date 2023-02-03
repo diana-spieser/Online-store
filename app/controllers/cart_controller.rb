@@ -1,4 +1,5 @@
 class CartController < ApplicationController
+  skip_before_action :authenticate_user!
   def show
     @render_cart = false
   end
