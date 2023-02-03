@@ -6,7 +6,7 @@ User.destroy_all
 
 puts 'Seed: Creating users...'
 
-user1 = User.create(email: "user1@gmail.com", password: 'password', admin: true )
+user1 = User.create(email: "joanabogdanova@gmail.com", password: 'password', admin: true )
 
 
 puts 'Seed: Users created...'
@@ -17,7 +17,7 @@ puts 'Seed: Deleting existing categories...'
 
  puts 'Seed: Creating categories...'
 
- file_earrings = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1671184574/joanabossa/116294140_292483308857963_756576925739599811_n_ujqiov.jpg")
+ file_earrings = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675418917/earrings_rzmjqk.png")
  category_earrings = Category.new(name: "Earrings", description: "Handmade earrings")
  category_earrings.photo.attach(io: file_earrings, filename: "earrings", content_type: "image/jpg")
  category_earrings.save!
@@ -47,74 +47,130 @@ category_special_offers = Category.new(name: "Special Offers", description: "Las
 category_special_offers.photo.attach(io: file_special_offers, filename: "special offers", content_type: "image/jpg")
 category_special_offers.save!
 
+file_dance = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675411334/dance_eagxfi.png")
+category_dance = Category.new(name: "Dance", description: "A special collection of silver earrings for dance lovers.")
+category_dance.photo.attach(io: file_dance, filename: "dance", content_type: "image/jpg")
+category_dance.save!
+
+file_silver_necklaces = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675417413/silver_necklaces_omdha4.png")
+category_silver_necklaces = Category.new(name: "Silver neacklace", description: "A selection of delicate silver necklaces with natural minerals")
+category_silver_necklaces.photo.attach(io: file_silver_necklaces, filename: "silver necklace", content_type: "image/jpg")
+category_silver_necklaces.save!
+
 puts 'Seed: Category created...'
 
 puts 'Seed: Creating products...'
-file_one = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1671372962/joanabossa/26864205_571365843213954_3305402450134958080_n_iuy1g0.jpg")
+
+file_1 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675411405/into_the_groove_flwiga.png")
+file_1_2 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675411334/dance_eagxfi.png")
+file_1_3 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675414777/dance_3.png_rmnrqj.jpg")
+
 product_one = Product.new(
-  name: "Imi loa", description: "Handmande earrings, the Hawaiian Seeker of knowledge, irresitable model as well!",price: 14, quantity: 3, user: user1,category: category_earrings)
-product_one.photos.attach(io: file_one, filename: "product", content_type: "image/jpg")
+  name: "🎶Into the groove🎶",
+  description: "Silver and découpage earrings #dancing
+  #lindyhop #intothegroove #jamming #танци",
+  price: 30,
+  quantity: 1,
+  user: user1,
+  category: category_dance
+)
+
+product_one.photos.attach(io: file_1, filename: "into the groove", content_type: "image/jpg")
+product_one.photos.attach(io: file_1_2, filename: "dance_1", content_type: "image/jpg")
+product_one.photos.attach(io: file_1_3, filename: "dance_2", content_type: "image/jpg")
+
 product_one.save!
 
-file_two = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1672734371/joanabossa/320935380_1334931577326991_7627723067549388851_n_f6hj7w.jpg")
+file_2 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675339138/dancer_joana_bossa_y9osib.jpg")
+file_2_2 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675416729/groovy_hszumf.png")
+file_2_3 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675411334/dance_eagxfi.png")
+
 product_two = Product.new(
-  name: "Longboard", description: "Handmande earrings for longboard lovers",price: 15, quantity: 1, user: user1,category: category_earrings)
-product_two.photos.attach(io: file_two, filename: "product", content_type: "image/jpg")
+  name: "🎶Groovy🎶",
+  description: "Dancing earrings made of silver and decoupage to move your day 🌟 #dancefever #groovy #intotherhythm #dancejewelry #move #silver",
+  price: 30,
+  quantity: 1,
+  user: user1,
+  category: category_dance
+)
+
+product_two.photos.attach(io: file_2, filename: "groovy", content_type: "image/jpg")
+product_two.photos.attach(io: file_2_2, filename: "dance_3", content_type: "image/jpg")
+product_two.photos.attach(io: file_2_3, filename: "dance_4", content_type: "image/jpg")
+
 product_two.save!
 
-file_three = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1672734371/joanabossa/320997896_3523146557973899_8039671669394343699_n_ngqp8j.jpg")
+
+file_3 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675416956/jazz_wbtnsf.png")
+file_3_2 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675416955/jazz2_ugdmvu.png")
+file_3_3 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675414777/dance_3.png_rmnrqj.jpg")
 product_three = Product.new(
-  name: "Rockamar", description: "Handmande earrings simple and wavy",price: 17, quantity: 1, user: user1,category: category_earrings)
-product_three.photos.attach(io: file_three, filename: "product", content_type: "image/jpg")
+  name: "🎶Jazz🎶",
+  description: "This silver earring dancing couple is crazy about jazz.#линдихоп #танцьори #dance #dancers #jazzdance #intothemusic",
+  price: 30,
+  quantity: 1,
+  user: user1,
+  category: category_dance
+)
+
+product_three.photos.attach(io: file_3, filename: "jazz", content_type: "image/jpg")
+product_three.photos.attach(io: file_3_2, filename: "jazz_1", content_type: "image/jpg")
+product_three.photos.attach(io: file_3_3, filename: "dance_5", content_type: "image/jpg")
+
 product_three.save!
 
-file_four = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1672734371/joanabossa/318531961_511400584354333_2555458654336043670_n_hndqyd.jpg")
+file_4 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675417413/silver_necklace_uwoj1k.png")
+file_4_2 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675417989/silver_neclace2_freb9u.png")
+file_4_3 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675417413/silver_necklaces_omdha4.png")
 product_four = Product.new(
-  name: "Wave", description: "Handmande earrings simple and wavy",price: 17, quantity: 1, user: user1,category: category_earrings)
-product_four.photos.attach(io: file_four, filename: "product", content_type: "image/jpg")
+  name: "Sapphire & Aquamarine",
+  description: "Delicate silver necklaces with natural minerals. Ideal for combining with a longer necklace and suitable for both causal & spacial occasions.. #silverjewelry #handmadejewelry #gemstonenecklace #summerqueen",
+  price: 30,
+  quantity: 1,
+  user: user1,
+  category: category_silver_necklaces
+)
+
+product_four.photos.attach(io: file_4, filename: "jazz", content_type: "image/jpg")
+product_four.photos.attach(io: file_4_2, filename: "jazz_1", content_type: "image/jpg")
+product_four.photos.attach(io: file_4_3, filename: "dance_5", content_type: "image/jpg")
+
 product_four.save!
 
-file_five = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1672734371/joanabossa/316401087_663928921896898_446676475758543922_n_zddiad.jpg")
+
+file_5 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1672734371/joanabossa/316401087_663928921896898_446676475758543922_n_zddiad.jpg")
+file_5_2 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675419224/joana_icccg7.png")
+
 product_five = Product.new(
-  name: "Cowrie", description: "Handmande earrings with cowrie shell from Costa Rica ",price: 17, quantity: 1, user: user1,category: category_earrings)
-product_five.photos.attach(io: file_five, filename: "product", content_type: "image/jpg")
+name: "Cowrie",
+description: "Handmande earrings with cowrie shell from Costa Rica ",
+price: 17,
+quantity: 1,
+user: user1,
+category:category_earrings)
+product_five.photos.attach(io: file_5, filename: "corwie", content_type: "image/jpg")
+product_five.photos.attach(io: file_5_2, filename: "corwie2", content_type: "image/jpg")
 product_five.save!
 
-file_six = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1672734371/joanabossa/316447186_494469422652031_5277536034828714196_n_hcacq0.jpg")
-six = Product.new(
-  name: "Place of happiness", description: "Materials: enamel, stainless steel and silica reflective beads ",price: 16, quantity: 1, user: user1,category: category_earrings)
-six.photos.attach(io: file_six, filename: "product", content_type: "image/jpg")
-six.save!
+file_6 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675419893/moei_ointqu.png")
+file_6_2 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675419893/moei3_mqwtyc.png")
+file_6_3 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675419893/moei2_jxpzwy.png")
+product_six = Product.new(
+name: "Moei",
+  description: "Materials: stainless steel, enamel, natural stone beads
+ #jewelrydesign #oceaninspired #surferjewelry #surfergirljewelry #surfergirl #santateresa #puravida #handmadejewelry #surfstyle #waveearrings",
+  price: 30,
+  quantity: 1,
+  user: user1,
+  category: category_earrings
+)
 
-file_seven = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1672750896/joanabossa/310771332_685307559253458_6556628591405182201_n_ezrwlx.jpg")
-product_seven = Product.new(
-  name: "Ventos Jeri", description: "Hand made earrings for wind lovers! ",price: 17, quantity: 1, user: user1,category: category_earrings)
-product_seven.photos.attach(io: file_seven, filename: "product", content_type: "image/jpg")
-product_seven.save!
+product_six.photos.attach(io: file_6, filename: "moei", content_type: "image/jpg")
+product_six.photos.attach(io: file_6_2, filename: "moei_1", content_type: "image/jpg")
+product_six.photos.attach(io: file_6_3, filename: "moei_2", content_type: "image/jpg")
 
-file_eight = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1671439866/joanabossa/26871206_222960728276503_9009291994735837184_n_krlxa3.jpg")
-product_eight = Product.new(
-  name: "Windsurf Jeri", description: "Hand made earrings for wind lovers! ",price: 18, quantity: 1, user: user1,category: category_earrings)
-product_eight.photos.attach(io: file_eight, filename: "product", content_type: "image/jpg")
-product_eight.save!
+product_six.save!
 
-file_nine = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1671373019/joanabossa/307772227_806036963880484_2205889920194392244_n_iekrwa.jpg")
-product_nine = Product.new(
-  name: "Downwinde", description: "A wave of warm Brazilian tones with @evantures!",price: 14, quantity: 1, user: user1,category: category_earrings)
-product_nine.photos.attach(io: file_nine, filename: "product", content_type: "image/jpg")
-product_nine.save!
-
-file_ten = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1672751396/joanabossa/307149535_794366391714128_3808997464321875752_n_ryhkxs.jpg")
-product_ten = Product.new(
-  name: "Ho'olele lupe", description: "Materials: enamel, lava beads.In Hawaiian 'Ho'olele lupe' means 'Kite flying'",price: 14, quantity: 1, user: user1,category: category_earrings)
-product_ten.photos.attach(io: file_ten, filename: "product", content_type: "image/jpg")
-product_ten.save!
-
-file_eleven = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1672751083/joanabossa/307841115_391953926437269_7276269204385466134_n_icwgrf.jpg")
-product_eleven = Product.new(
-  name: "Moana", description: "Hand made earrings for wind wave, wind & surf lovers! ",price: 19, quantity: 1, user: user1,category: category_earrings)
-product_eleven.photos.attach(io: file_eleven, filename: "product", content_type: "image/jpg")
-product_eleven.save!
 
 puts 'Seed: Products created...'
 
