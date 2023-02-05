@@ -136,7 +136,7 @@ body.custom {
 .add-to-cart {
   position: relative;
   display: inline-block;
-  background: $button;
+  background: $ocean;
   color: $white;
   border: none;
   border-radius: 0;
@@ -167,6 +167,9 @@ body.custom {
   }
 }
 
+.add-to-cart:hover {
+  background: $sun;
+}
 .container-custom {
   margin: auto;
   padding: 0 1rem;

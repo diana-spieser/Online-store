@@ -29,20 +29,28 @@
     </div>
     <div class="product-details">
       <div class="product-title"><%=product.name%></div>
-      <p class="product-description"><%=product.description%></p>
+      <p class="product-description"><%= truncate(product.description, length: 140, separator: ' ', omission: '...') %></p>
     </div>
     <div class="product-price"><%=product.price%></div>
+    <div class="panier">
     <div class="product-quantity">
-1
+    <%= form_with(url: cart_add_path) do |f| %>
+        <%= f.hidden_field :id, value: product.id %>
+        <%= f.number_field :quantity, value: orderable.quantity, min: 0, id:"input" %>
+        <%= f.submit "Modify", class: "modify-product" %>
+      <% end %>
+
+
+    </div>
     </div>
     <div class="product-removal">
     <%= form_with(url: cart_remove_path) do |f| %>
         <%= f.hidden_field :id, value: orderable.id %>
         <%= f.submit "Delete", class: "remove-product" %>
-
     </div>
     <div class="product-line-price"> <%= orderable.total %></div>
   </div>
+
     <% end %>
   <% end %>
   <% else %>

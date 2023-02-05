@@ -35,6 +35,9 @@ class ProductsController < ApplicationController
   def show
     @contact = Contact.new
     @products = Product.all
+    @category = Category.new
+    @product = Product.find(params[:id])
+
 
   end
 

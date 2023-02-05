@@ -99,12 +99,13 @@ label {
       margin: 5px 20px 5px 0;
       line-height: 1.4em;
       color: #888;
+      text-align: justify;
     }
   }
 
   .product-quantity {
     input {
-      width: 40px;
+width: 50px;
 
     }
   }
@@ -112,16 +113,15 @@ label {
   .modify-product {
     border: 0;
     padding: 4px 8px;
-    background-color: blue;
+    background-color: $ocean;
     color: #fff;
     font-weight: 800;
     font-size: 12px;
     border-radius: 3px;
-    width: 50px !important;
   }
 
   .modify-product:hover {
-    background-color: turquoise;
+  background-color: $sun;
   }
   .remove-product {
     border: 0;
@@ -219,9 +219,12 @@ label {
       margin-left: 20px;
     }
   }
+  .modify-product {
+    display:none;
+  }
 
   .product-quantity:before {
-    content: 'x';
+    // content: 'x';
   }
 
   .product-removal {
@@ -232,6 +235,9 @@ label {
     float: right;
     width: 70px;
   }
+
+
+
 
 }
 
@@ -250,6 +256,10 @@ label {
     margin-top: 10px;
   }
 
+  .modify-product {
+    display:none;
+  }
+
   .product .product-line-price:before {
     content: 'Item Total: $';
   }
@@ -265,4 +275,8 @@ label {
       }
     }
   }
+}
+#input {
+  width: 40px;
+  border: white;
 }

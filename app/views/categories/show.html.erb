@@ -25,7 +25,7 @@
             <div>
               <%= link_to product_path(product), class:"text-decoration-none" do %>
               <h2><%=product.name%></h2>
-              <p><%=product.description%></p>
+              <p><%= truncate(product.description, length: 40, separator: ' ', omission: '...') %></p>
               <a href="https://www.instagram.com/joanabossajewelry/"><i class="fab fa-instagram"></i></a>
               <% end %>
             </div>
