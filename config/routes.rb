@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   post 'cart/add'
   post 'cart/remove'
   post "/cart/add", to: "carts#add_to_cart"
+  get '/recap_path', to: 'cart#recap'
 end

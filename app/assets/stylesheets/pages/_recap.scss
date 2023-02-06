@@ -1,0 +1,292 @@
+.inspired-by {
+  display: block;
+  position: relative;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+}
+
+.paypal {
+  position: relative;
+  left: 50%;
+  display: inline-block;
+  /*min-width: 500px;*/
+  max-width: 100%;
+  width: auto;
+  margin: 50px auto 25px;
+  padding: 20px 0;
+  clear: both;
+
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.paypal__header {
+  display: flex;
+  -ms-align-items: flex-start;
+  align-items: flex-start;
+
+  padding: 30px 30px 45px;
+  background: #fff;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.paypal__logo-wrapper {
+  flex: 1 0 40%;
+}
+
+.paypal__logo {
+  display: block;
+  width: 50px;
+  height: auto;
+  margin-left: 15px;
+}
+
+.paypal__header-info {
+  flex: 1 0 50%;
+}
+
+.paypal__date,
+.paypal__ref {
+  display: block;
+  font-size: 19px;
+  color: #aaa;
+  font-weight: 300;
+}
+
+.paypal__date {
+  margin-bottom: 5px;
+}
+
+.paypal__subheader-wrapper {
+  background: #fff;
+  padding-bottom: 20px;
+}
+
+.paypal__subheader {
+  padding: 0 45px 0 40px;
+  border-left: 5px solid #029de0;
+}
+
+.paypal__username {
+  margin: 0 0 10px 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.paypal__help-text {
+  color: #aaa;
+  font-weight: 300;
+}
+
+.paypal__cart {
+  display: block;
+  padding: 25px 30px 45px;
+}
+
+.paypal__cart-title {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.paypal__cart-list {
+  margin: 0;
+  padding: 0 15px;
+  list-style: none;
+}
+
+.paypal__cart-item {
+  display: block;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  border-top: 2px dashed #aaa;
+
+  font-size: 18px;
+}
+
+.paypal__cart-item:first-child {
+  border-top: 0;
+}
+
+.paypal__cart-item:last-child {
+  margin-bottom: 0;
+  border-top: 2px solid #FFE155;
+}
+
+.paypal__index {
+  padding-right: 15px;
+  color: #aaa;
+  font-weight: 300;
+}
+
+.paypal__item-name {
+  color: #aaa;
+  font-weight: 300;
+}
+
+.paypal__item-price {
+  float: right;
+  letter-spacing: 1px;
+}
+
+.paypal__cart-total {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.paypal__footer {
+  position: relative;
+  padding: 30px 20px;
+  border-top: 2px dashed #FF84A1;
+
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.paypal__footer::before,
+.paypal__footer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  border: 4px solid transparent;
+
+  -webkit-transform: translateY(calc(-50% - 1px));
+  -ms-transform: translateY(calc(-50% - 1px));
+  -o-transform: translateY(calc(-50% - 1px));
+  transform: translateY(calc(-50% - 1px));
+}
+
+.paypal__footer::before {
+  left: 0;
+  border-left: 7px solid #ff85a1;
+}
+
+.paypal__footer::after {
+  right: 0;
+  border-right: 7px solid #ff85a1;
+}
+
+.paypal__barcode {
+  display: block;
+  margin: 0 auto;
+  max-width: 300px;
+  height: auto;
+}
+
+/**
+ * Paypal Animations
+ */
+
+@keyframes show-paypal {
+ 0% {
+   opacity: 0;
+   transform: scale(0) translateX(-50%);
+ }
+
+ 85% {
+   opacity: 0;
+ }
+
+ 100% {
+   opacity: 1;
+   transform: scale(1) translateX(-50%);
+ }
+}
+
+.paypal {
+  transform-origin: top left;
+  animation: show-paypal 1s ease-out forwards;
+}
+
+@keyframes show-subheader {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  65% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.paypal__subheader {
+  opacity: 0;
+  animation: show-subheader 1s 0.5s ease-out forwards;
+}
+
+@keyframes slide-down {
+  to {
+    transform: perspective(100px) rotateX(0) translate3d(0, 0, 0);
+  }
+}
+
+.paypal__cart {
+  background-color: #fff;
+
+  transform-style: preserve-3d;
+  transform-origin: top center;
+  transform: perspective(100px) rotateX(-90deg) translate3d(0, 0, 0);
+
+  animation: slide-down 0.4s 2s ease-out forwards;
+}
+
+.paypal__footer {
+  background-color: #fff;
+
+  transform-style: preserve-3d;
+  transform-origin: top center;
+  transform: perspective(100px) rotateX(-90deg) translate3d(0, 0, 0);
+
+  animation: slide-down 0.4s 2.5s ease-out forwards;
+}
+
+@keyframes show-cart-title {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.paypal__cart-title {
+  opacity: 0;
+  transform: translateY(10px);
+
+  animation: show-cart-title 0.5s 2.25s ease-in forwards;
+}
+
+@keyframes show-cart-item {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.paypal__cart-item {
+  opacity: 0;
+  transform: translateX(-30px);
+
+  animation: show-cart-item 0.3s 2.75s ease-in forwards;
+}
+
+.paypal__cart-item:nth-child(2) {
+  animation-delay: 2.9s;
+}
+
+.paypal__cart-item:nth-child(3) {
+  animation-delay: 3.05s;
+}
+
+.paypal__cart-item:nth-child(4) {
+  animation-delay: 3.2s;
+}
