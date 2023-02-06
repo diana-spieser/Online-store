@@ -1,0 +1,52 @@
+
+ <div class="grid second-nav">
+      <div class="column-xs-12">
+        <nav>
+          <ol class="breadcrumb-list">
+            <li class="breadcrumb-item"><a href="/about">About</a></li>
+            <li class="breadcrumb-item"><a href="/products">Products</a></li>
+            <li class="breadcrumb-item active">Order Summary</li>
+          </ol>
+        </nav>
+      </div><div class="paypal">
+      <div class="paypal__header">
+        <div class="paypal__logo-wrapper">
+          <img src="https://i.ibb.co/DrvmW5y/paypal.png" alt="Paypal" class="paypal__logo">
+        </div>
+        <div class="paypal__header-info">
+          <span class="paypal__date"><%= Time.now %></span>
+          <span class="paypal__ref"></span>
+        </div>
+      </div>
+
+      <div class="paypal__subheader-wrapper">
+        <div class="paypal__subheader">
+          <h1 class="paypal__username">Thank You!</h1>
+          <span class="paypal__help-text">Please find below your order details:</span>
+        </div>
+      </div>
+
+      <div class="paypal__cart">
+        <h2 class="paypal__cart-title">Recap:</h2>
+        <ul class="paypal__cart-list">
+          <li class="paypal__cart-item">
+        <% @cart.orderables.each do |orderable| %>
+        <% product = orderable.product %>
+      <div id="<%= "cart-#{product.id}" %>">
+            <span class="paypal__index"><%= orderable.quantity %></span>x
+            <span class="paypal__item-name"><%=product.name%></span>
+            <span class="paypal__item-price">€<%=orderable.total %></span>
+            <% end %>
+          </li>
+          <li class="paypal__cart-item">
+            <span class="paypal__cart-total">Total</span>
+            <span class="paypal__item-price">€<%= @cart.total %></span>
+          </li>
+        </ul>
+      </div>
+      <div class="paypal__footer">
+        <img src="https://i.ibb.co/c8CQvBq/barcode.png" alt="Paypal Barcode" class="paypal__barcode">
+      </div>
+    </div>
+    <%@cart = Cart.create
+      session[:cart_id] = @cart.id  %>
