@@ -1,3 +1,4 @@
+
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "/", class: "navbar-brand" do %>
@@ -31,7 +32,7 @@
           <%# <li class="nav-item">
             <%= link_to "Contact", "/contacts/new", class: "nav-link" %>
           <%# </li> %>
-          <li nav-item><a href="/cart" id="cartoooo"><i class="fa fa-shopping-cart nav-link"></i><span class="badge nav-link"><%= turbo_frame_tag  do %><%=@cart.orderables.sum(:quantity) %><% end %></span></a></li>
+          <li nav-item><a href="/cart" id="cartoooo"><i class="fa fa-shopping-cart nav-link"></i><span class="badge nav-link" id="cart-count"><%= turbo_frame_tag  do %><%=@cart.orderables.sum(:quantity) %><% end %></span></a></li>
           <li class="nav-item dropdown">
             <%= image_tag "https://res.cloudinary.com/dygywvyiq/image/upload/v1672743926/joanabossa/user_l1elzu.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -40,6 +41,7 @@
             </div>
           </li>
       </ul>
+
     </div>
   </div>
 </div>

@@ -37,7 +37,7 @@
     <%= form_with(url: cart_add_path) do |f| %>
         <%= f.hidden_field :id, value: product.id %>
         <%= f.number_field :quantity, value: orderable.quantity, min: 0, id:"input" %>
-        <%= f.submit "Modify", class: "modify-product" %>
+        <%= f.submit "Modify", class: "modify-product", id: "modify-button" %>
       <% end %>
 
 
@@ -46,7 +46,7 @@
     <div class="product-removal">
     <%= form_with(url: cart_remove_path) do |f| %>
         <%= f.hidden_field :id, value: orderable.id %>
-        <%= f.submit "Delete", class: "remove-product" %>
+        <%= f.submit "Delete", class: "remove-product", id: "delete-button" %>
     </div>
     <div class="product-line-price"> <%= orderable.total %></div>
   </div>
@@ -97,3 +97,14 @@
 </div>
 
 </div> <!--end div id shopping -->
+<script>
+(function() {
+  document.getElementById("modify-button").addEventListener("click", function(){
+    location.reload();
+  });
+
+  document.getElementById("delete-button").addEventListener("click", function(){
+    location.reload();
+  });
+})();
+</script>

@@ -41,7 +41,7 @@
             <%= form_with(url: cart_add_path) do |f| %>
             <%= f.hidden_field :id, value: @product.id %>
             <%= f.number_field :quantity, value: 1, min: 1 %>
-            <%= f.submit "Add To Cart", class:"add-to-cart" %>
+            <%= f.submit "Add To Cart", class:"add-to-cart", id:"add-to-cart-button" %>
             <% end %>
           </div>
         </div>
@@ -89,7 +89,6 @@
 
 </body>
 
-
 <script>
 (function() {
   const activeImage = document.querySelector(".product-image-show .active");
@@ -100,5 +99,14 @@
   }
 
   productImages.forEach(image => image.addEventListener("click", changeImage));
+})();
+</script>
+
+
+<script>
+(function() {
+  document.getElementById("add-to-cart-button").addEventListener("click", function(){
+    setTimeout(function(){ location.reload(); }, 1);
+  });
 })();
 </script>

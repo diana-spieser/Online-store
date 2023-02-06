@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   get 'cart', to: 'cart#show'
   post 'cart/add'
   post 'cart/remove'
+  post "/cart/add", to: "carts#add_to_cart"
 end
