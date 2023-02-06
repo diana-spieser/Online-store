@@ -37,25 +37,20 @@ category_accessories = Category.new(name: "Accessories", description: "Accessori
 category_accessories.photo.attach(io: file_accessories, filename: "accessories", content_type: "image/jpg")
 category_accessories.save!
 
-file_new_collection = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1671373019/joanabossa/103986176_269440044363212_455038791219377184_n_mppdcg.jpg")
-category_new_collection = Category.new(name: "New collection", description: "SS2023")
-category_new_collection.photo.attach(io: file_new_collection, filename: "new collection", content_type: "image/jpg")
-category_new_collection.save!
-
-file_special_offers = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1671373019/joanabossa/49371827_2031560843597656_8162156449745709384_n_qgsw69.jpg")
-category_special_offers = Category.new(name: "Special Offers", description: "Last items from previos collections on top price!")
-category_special_offers.photo.attach(io: file_special_offers, filename: "special offers", content_type: "image/jpg")
-category_special_offers.save!
-
 file_dance = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675411334/dance_eagxfi.png")
 category_dance = Category.new(name: "Dance", description: "A special collection of silver earrings for dance lovers.")
 category_dance.photo.attach(io: file_dance, filename: "dance", content_type: "image/jpg")
 category_dance.save!
 
 file_silver_necklaces = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675417413/silver_necklaces_omdha4.png")
-category_silver_necklaces = Category.new(name: "Silver neacklace", description: "A selection of delicate silver necklaces with natural minerals")
+category_silver_necklaces = Category.new(name: "Silver neacklaces", description: "A selection of delicate silver necklaces with natural minerals")
 category_silver_necklaces.photo.attach(io: file_silver_necklaces, filename: "silver necklace", content_type: "image/jpg")
 category_silver_necklaces.save!
+
+file_rockamar = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675591781/rockamar_zumr9g.png")
+category_rockamar = Category.new(name: "Rockamar", description: "For a week full of waves and stoke!")
+category_rockamar.photo.attach(io: file_rockamar, filename: "rockamar", content_type: "image/jpg")
+category_rockamar.save!
 
 puts 'Seed: Category created...'
 
@@ -156,9 +151,9 @@ file_6 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675419893
 file_6_2 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675419893/moei3_mqwtyc.png")
 file_6_3 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675419893/moei2_jxpzwy.png")
 product_six = Product.new(
-name: "Moei",
+  name: "Moei",
   description: "Materials: stainless steel, enamel, natural stone beads
- #jewelrydesign #oceaninspired #surferjewelry #surfergirljewelry #surfergirl #santateresa #puravida #handmadejewelry #surfstyle #waveearrings",
+  #jewelrydesign #oceaninspired #surferjewelry #surfergirljewelry #surfergirl #santateresa #puravida #handmadejewelry #surfstyle #waveearrings",
   price: 30,
   quantity: 1,
   user: user1,
@@ -172,8 +167,168 @@ product_six.photos.attach(io: file_6_3, filename: "moei_2", content_type: "image
 product_six.save!
 
 
+file_7 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675590102/sunset_reef_bs1sky.png")
+file_7_2 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675590246/sunset_reef_3_otzovn.png")
+file_7_3 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675590102/sunset_reef_2_ufutcz.png")
+product_seven = Product.new(
+  name: "Sunset reef",
+  description: "Have you experienced loosing a fin out in the ocean? Celebrating the funkiness of this feeling comes this new model from Makai Costa Rica collection. One lost, one found:)
+  Materials: silver 925, stainless steel, enamel.
+  #silverjewelry #enameljewelry #surfjewelery #surfgirljewelry #surfing #surfchicas #lostfin",
+  price: 35,
+  quantity: 1,
+  user: user1,
+  category: category_silver
+)
+
+product_seven.photos.attach(io: file_7, filename: "suneset_reef", content_type: "image/jpg")
+product_seven.photos.attach(io: file_7_2, filename: "sunset_reef_1", content_type: "image/jpg")
+product_seven.photos.attach(io: file_7_3, filename: "sunset_reef_2", content_type: "image/jpg")
+
+product_seven.save!
+
+file_8 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675590830/hermosa_c8fvnt.png")
+file_8_2 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675590830/hermosa_2_evvneq.png")
+file_8_3 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675590830/hermosa_1_uopoq5.png")
+product_eight = Product.new(
+  name: "Hermosa",
+  description: "Materials: silver 925, stainless steel and enamel It is also available in turquoise. Loves the waves.🌊💙
+  #heart #surf #girl #surfstation #gonesurfing #fortheloveofsurfing",
+  price: 32,
+  quantity: 1,
+  user: user1,
+  category: category_silver
+)
+
+product_eight.photos.attach(io: file_8, filename: "hermosa", content_type: "image/jpg")
+product_eight.photos.attach(io: file_8_2, filename: "hermosa_1", content_type: "image/jpg")
+product_eight.photos.attach(io: file_8_3, filename: "hermosa_2", content_type: "image/jpg")
+
+product_eight.save!
+
+
+
+file_9 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675591781/rockamar_earrings_black_ahswsc.png")
+file_9_2 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675591781/rockamar_earrings_all_nlgmc6.png")
+file_9_3 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675591781/rockamar_zumr9g.png")
+product_nine = Product.new(
+  name: "Rockamar",
+  description: "For a week full of waves and stoke! Black & white
+  Materials: stainless steel base, enamel.",
+  price: 16,
+  quantity: 1,
+  user: user1,
+  category: category_rockamar
+)
+
+product_nine.photos.attach(io: file_9, filename: "Rockamar", content_type: "image/jpg")
+product_nine.photos.attach(io: file_9_2, filename: "Rockamar_1", content_type: "image/jpg")
+product_nine.photos.attach(io: file_9_3, filename: "Rockamar_2", content_type: "image/jpg")
+
+product_nine.save!
+
+
+file_10 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675592100/rockamar_blue_and_white_s7yamq.png")
+file_10_2 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675591781/rockamar_earrings_all_nlgmc6.png")
+file_10_3 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675591781/rockamar_zumr9g.png")
+product_ten = Product.new(
+  name: "Rockamar",
+  description: "For a week full of waves and stoke! Blue & white
+  Materials: stainless steel base, enamel.",
+  price: 16,
+  quantity: 1,
+  user: user1,
+  category: category_rockamar
+)
+
+product_ten.photos.attach(io: file_10, filename: "Rockamar", content_type: "image/jpg")
+product_ten.photos.attach(io: file_10_2, filename: "Rockamar_3", content_type: "image/jpg")
+product_ten.photos.attach(io: file_10_3, filename: "Rockamar_4", content_type: "image/jpg")
+
+product_ten.save!
+puts 'Seed: Products created...'
 puts 'Seed: Products created...'
 
+file_11 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675592463/rockamar_bracelet_zawwta.png")
+file_11_2 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675592463/rockamar_bracelet_1_goscl6.png")
+file_11_3 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675592463/rockamar_bracelet_2_dtvuco.png")
+product_eleven = Product.new(
+  name: "Rockamar",
+  description: "For the ones of you who like details and waves:) This unisex bracelet model has a delicate presence, swims perfect in salty and sweet waters and likes to remind you of the ocean.
+  Materials: Stainless steel, enamel and cord
+  Size: Comes in various sizes and colors",
+  price: 16,
+  quantity: 1,
+  user: user1,
+  category: category_rockamar
+)
+
+product_eleven.photos.attach(io: file_11, filename: "Rockamar", content_type: "image/jpg")
+product_eleven.photos.attach(io: file_11_2, filename: "Rockamar_5", content_type: "image/jpg")
+product_eleven.photos.attach(io: file_11_3, filename: "Rockamar_6", content_type: "image/jpg")
+
+product_eleven.save!
+
+
+file_12 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675593756/moana_enyiey.png")
+file_12_2 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675593756/moana_2_ta4jhw.png")
+file_12_3 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675593756/moana_1_yv3yyk.png")
+
+product_twelve = Product.new(
+  name: "Moana",
+  description: "love waves, seas and oceans🌊
+
+  #surf #surfergirl #moana #surfearrings #gonesurfing #surflife",
+  price: 15,
+  quantity: 1,
+  user: user1,
+  category: category_earrings
+)
+
+product_twelve.photos.attach(io: file_12, filename: "Moana", content_type: "image/jpg")
+product_twelve.photos.attach(io: file_12_2, filename: "Moana_1", content_type: "image/jpg")
+product_twelve.photos.attach(io: file_12_3, filename: "Moana_2", content_type: "image/jpg")
+product_twelve.save!
+
+file_13 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675594310/sunglassess_chain_1_tfi5ez.png")
+file_13_2 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675594310/sunlass_chain_men_utdpdl.png")
+file_13_3 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675594310/sunglasses_chain_men_dcixji.png")
+
+product_thirtheen = Product.new(
+  name: "Sunglasses chain for men",
+  description: "A custom made design for man sunglass chain. Simple and stylish with some blue hints reminding of the sea horizons.🕶️🔅
+
+  #styleinspo #sunglassesstyle #sunglasseschain #jewelryforsurfers #sunisshining",
+  price: 15,
+  quantity: 1,
+  user: user1,
+  category: category_accessories
+)
+
+product_thirtheen.photos.attach(io: file_13, filename: "Sunglasses_chain", content_type: "image/jpg")
+product_thirtheen.photos.attach(io: file_13_2, filename: "Sunglasses_chain_1", content_type: "image/jpg")
+product_thirtheen.photos.attach(io: file_13_3, filename: "Sunglasses_chain_2", content_type: "image/jpg")
+product_thirtheen.save!
+
+file_14 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675594638/chain_ybwpns.png")
+file_14_2 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675594638/chain_1_gvagto.png")
+file_14_3 = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1675594637/chain_3_pbnbjm.png")
+
+product_fourtheen = Product.new(
+  name: "Sunglasses chain",
+  description: "Recently I have been working on something new and very practical for people who like to move actively - sunglasses beaded chokers to make your summertime more colorful, stylish and funky. Each model is one of a kind and with some special charms beaded in it.",
+  price: 15,
+  quantity: 1,
+  user: user1,
+  category: category_accessories
+)
+
+product_fourtheen.photos.attach(io: file_14, filename: "Sunglasses_chain", content_type: "image/jpg")
+product_fourtheen.photos.attach(io: file_14_2, filename: "Sunglasses_chain_3", content_type: "image/jpg")
+product_fourtheen.photos.attach(io: file_14_3, filename: "Sunglasses_chain_4", content_type: "image/jpg")
+product_fourtheen.save!
+puts 'Seed: Products created...'
+puts 'Seed: Products created...'
 
 
 puts 'Seed: Finished seeding!'
