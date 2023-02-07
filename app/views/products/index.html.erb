@@ -3,7 +3,7 @@
       <div class="column-xs-12">
         <nav>
           <ol class="breadcrumb-list">
-            <li class="breadcrumb-item"><a href="/about">About</a></li>
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
             <li class="breadcrumb-item"><a href="/">Collections</a></li>
             <li class="breadcrumb-item active">Products</li>
           </ol>
@@ -15,18 +15,20 @@
     <div class="index-cards-container">
       <%@products.each do |product| %>
       <div class="card-index">
-        <% count = 0 %>
-        <% product.photos.each do |photo| %>
-          <%= cl_image_tag photo.key %>
-          <% count += 1 %>
-          <% break if count == 1 %>
-        <% end %>
+<% count = 0 %>
+<% product.photos.each do |photo| %>
+  <%= link_to product_path(product) do %>
+    <%= cl_image_tag photo.key, class: "card-index-image"%>
+  <% end %>
+  <% count += 1 %>
+  <% break if count == 1 %>
+<% end %>
         <div class="card-index-infos">
           <div>
             <%= link_to product_path(product), class:"text-decoration-none" do %>
             <h2><%=product.name%></h2>
-            <p><%= truncate(product.description, length: 40, separator: ' ', omission: '...') %></p>
-            <a href="https://www.instagram.com/joanabossajewelry/"><i class="fab fa-instagram"></i></a>
+            <p><%= truncate(product.description, length: 56, separator: ' ', omission: '...') %></p>
+            <%# <a href="https://www.instagram.com/joanabossajewelry/"><i class="fab fa-instagram"></i></a> %>
             <% end %>
           </div>
             <h2 class="card-index-pricing">€<%= product.price.round(0) %></h2>
@@ -36,18 +38,4 @@
       <%end%>
     </div>
 </div>
-
-<center> <i class="fa-regular fa-circle-up"id="go-up-btn-one"></i></center>
- <br>
- <br>
- <br>
- <br>
-
-<script>
-(function() {
-  const goUpBtnOne = document.querySelector("#go-up-btn-one");
-  goUpBtnOne.addEventListener("click", function() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-})();
-</script>
+<center> <%= link_to 'See all categories', categories_path, class:"btn-blue" %></center>

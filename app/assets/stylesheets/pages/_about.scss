@@ -17,7 +17,7 @@
 }
 
 .card {
-  max-width: 380px;
+  max-width: 600px;
   margin: auto;
   overflow-y: auto;
   position: relative;
@@ -32,7 +32,7 @@
 }
 
 .card[data-state="#about"] {
-  height: 450px;
+  height: 600px;
   .card-main {
     padding-top: 0;
   }

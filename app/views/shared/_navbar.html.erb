@@ -2,7 +2,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "/", class: "navbar-brand" do %>
-       <%= image_tag "logo.png", alt: "alttext", class: "avatar" %>
+      <%= image_tag "logo.png", alt: "alttext", class: "avatar" %>
     <% end %>
     <div class="title"><h1><b></b></h1></div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,29 +19,50 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-          <li class="nav-item dropdown">
-            <%= link_to "Home", "/categories", class: "nav-link" %>
-          </li>
-
-          <li class="nav-item">
-            <%= link_to "Products", "/products", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "About", "/about", class: "nav-link" %>
-          </li>
+          <li class="nav-item active">
+  <li class="nav-item dropdown <%= "active" if action_name == "index" && controller_name == "categories" %>">
+    <%= link_to "Collections", "/categories", class: "nav-link" %>
+  </li>
+  <li class="nav-item <%= "active" if action_name == "index" && controller_name == "products" %>">
+    <%= link_to "Products", "/products", class: "nav-link" %>
+  </li>
+  <li class="nav-item <%= "active" if action_name == "about" && controller_name == "pages" %>">
+    <%= link_to "About", "/about", class: "nav-link" %>
+  </li>
           <%# <li class="nav-item">
             <%= link_to "Contact", "/contacts/new", class: "nav-link" %>
           <%# </li> %>
           <li nav-item><a href="/cart" id="cartoooo"><i class="fa fa-shopping-cart nav-link"></i><span class="badge nav-link" id="cart-count"><%= turbo_frame_tag  do %><%=@cart.orderables.sum(:quantity) %><% end %></span></a></li>
           <li class="nav-item dropdown">
+          <% if user_signed_in? %>
             <%= image_tag "https://res.cloudinary.com/dygywvyiq/image/upload/v1672743926/joanabossa/user_l1elzu.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
             </div>
           </li>
+          <% else %>
+        <li class="nav-item dropdown">
+        <%= image_tag "https://res.cloudinary.com/dygywvyiq/image/upload/v1672743926/joanabossa/user_l1elzu.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+
+        <% end %>
       </ul>
 
     </div>
   </div>
 </div>
+<script>
+function highlightActiveNavLink() {
+  const navLinks = document.querySelectorAll('.navbar-lewagon .nav-link');
+  const currentUrl = window.location.pathname;
+
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentUrl) {
+      link.classList.add('active');
+    }
+  });
+}
+
+window.addEventListener('load', highlightActiveNavLink);
+</script>

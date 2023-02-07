@@ -273,6 +273,9 @@ GEM
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
+    turbolinks (5.2.1)
+      turbolinks-source (~> 5.2)
+    turbolinks-source (5.2.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unf (0.1.4)
@@ -324,6 +327,7 @@ DEPENDENCIES
   sprockets-rails
   stimulus-rails
   turbo-rails
+  turbolinks (~> 5.2.0)
   tzinfo-data
   web-console
   webdrivers

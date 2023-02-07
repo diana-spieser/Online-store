@@ -40,7 +40,7 @@
           <div id="<%= dom_id @product %>">
             <%= form_with(url: cart_add_path) do |f| %>
             <%= f.hidden_field :id, value: @product.id %>
-            <%= f.number_field :quantity, value: 1, min: 1 %>
+            <%= f.number_field :quantity, value: 1, min: 1, class: "add-number-field" %>
             <%= f.submit "Add To Cart", class:"add-to-cart", id:"add-to-cart-button" %>
             <% end %>
           </div>
@@ -57,23 +57,23 @@
     <% products = Product.where.not(category: @product.category).where.not(id: @product.id).first(3) %>
   <% end %>
   <% products.each do |product| %>
-    <div class="card-index">
+    <div class="card-index-product">
       <% count = 0 %>
       <% product.photos.each do |photo| %>
-        <%= cl_image_tag photo.key %>
+        <%= cl_image_tag photo.key, style:"height=210px" %>
         <% count += 1 %>
         <% break if count == 1 %>
       <% end %>
-      <div class="card-index-infos">
+      <div class="card-index-product-infos">
         <div>
           <%= link_to product_path(product), class:"text-decoration-none" do %>
           <h2><%=product.name%></h2>
           <p><%= truncate(product.description, length: 40, separator: ' ', omission: '...') %></p>
-          <a href="https://www.instagram.com/joanabossajewelry/"><i class="fab fa-instagram"></i></a>
+          <%# <a href="https://www.instagram.com/joanabossajewelry/"><i class="fab fa-instagram"></i></a> %>
           <% end %>
         </div>
-          <h2 class="card-index-pricing">€<%= product.price.round(0) %></h2>
-          <%= image_tag "logo.png", alt: "alttext", class: "card-index-user avatar-bordered"%>
+          <h2 class="card-index-product-pricing">€<%= product.price.round(0) %></h2>
+          <%= image_tag "logo.png", alt: "alttext", class: "card-index-product-user avatar-bordered"%>
       </div>
     </div>
   <% end %>

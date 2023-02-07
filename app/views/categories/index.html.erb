@@ -24,7 +24,9 @@
     <div class="container index-cards-container">
       <%@categories.each do |category| %>
         <div class="card-index">
-          <%= cl_image_tag category.photo.key %>
+        <%= link_to category_path(category) do %>
+          <%= cl_image_tag category.photo.key, class:"card-index-image" %>
+          <% end %>
           <div class="card-index-infos">
           <div>
           <%= link_to category_path(category), class:"text-decoration-none" do %>
@@ -45,27 +47,30 @@
 
 <div class="index-cards-container">
   <% products = Product.order(created_at: :desc).limit(6) %>
-  <% products.each do |product| %>
-    <div class="card-index">
-      <% count = 0 %>
-      <% product.photos.each do |photo| %>
-        <%= cl_image_tag photo.key %>
-        <% count += 1 %>
-        <% break if count == 1 %>
-      <% end %>
-      <div class="card-index-infos">
-        <div>
-          <%= link_to product_path(product), class:"text-decoration-none" do %>
-          <h2><%=product.name%></h2>
-          <p><%= truncate(product.description, length: 40, separator: ' ', omission: '...') %></p>
-          <a href="https://www.instagram.com/joanabossajewelry/"><i class="fab fa-instagram"></i></a>
-          <% end %>
-        </div>
-          <h2 class="card-index-pricing">€<%= product.price.round(0) %></h2>
-          <%= image_tag "logo.png", alt: "alttext", class: "card-index-user avatar-bordered"%>
-      </div>
-    </div>
+   <%products.each do |product| %>
+      <div class="card-index">
+<% count = 0 %>
+<% product.photos.each do |photo| %>
+  <%= link_to product_path(product) do %>
+    <%= cl_image_tag photo.key, class: "card-index-image"%>
   <% end %>
+  <% count += 1 %>
+  <% break if count == 1 %>
+<% end %>
+        <div class="card-index-infos">
+          <div>
+            <%= link_to product_path(product), class:"text-decoration-none" do %>
+            <h2><%=product.name%></h2>
+            <p><%= truncate(product.description, length: 50, separator: ' ', omission: '...') %></p>
+            <%# <a href="https://www.instagram.com/joanabossajewelry/"><i class="fab fa-instagram"></i></a> %>
+            <% end %>
+          </div>
+            <h2 class="card-index-pricing">€<%= product.price.round(0) %></h2>
+            <%= image_tag "logo.png", alt: "alttext", class: "card-index-user avatar-bordered"%>
+        </div>
+      </div>
+      <%end%>
+    </div>
 </div>
 <center> <i class="fa-regular fa-circle-up"id="go-up-btn"></i></center>
  <br>
