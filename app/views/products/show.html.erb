@@ -5,7 +5,7 @@
           <div class="column-xs-12">
             <nav>
               <ol class="breadcrumb-list">
-                <li class="breadcrumb-item"><a href="/about">About</a></li>
+                <%# <li class="breadcrumb-item"><a href="/about">About</a></li> %>
                 <li class="breadcrumb-item"><a href="/products">Products</a></li>
                 <li class="breadcrumb-item active"><%= @product.name %></li>
               </ol>
@@ -36,7 +36,6 @@
             <div class="description">
               <p><%= @product.description %></p>
             </div>
-
           <div id="<%= dom_id @product %>">
             <%= form_with(url: cart_add_path) do |f| %>
             <%= f.hidden_field :id, value: @product.id %>
@@ -47,10 +46,17 @@
         </div>
         <div class="grid related-products">
           <div class="column-xs-12">
-            <h3>You may also like</h3>
+          <nav>
+          <ol class="breadcrumb-list">
+            <%# <li class="breadcrumb-item"><a href="/about">About</a></li>
+            <li class="breadcrumb-item"><a href="/products">Products</a></li> %>
+            <li class="breadcrumb-item active">You may also like...</li>
+            <br>
+            <br>
+          </ol>
+        </nav>
+            <%# <h3>You may also like</h3> %>
           </div>
-
-
 <div class="index-cards-container">
   <% products = Product.where(category: @product.category).where.not(id: @product.id).first(3) %>
   <% if products.size < 3 %>
@@ -81,15 +87,13 @@
       <%end%>
     </div>
 </div>
-
-
-    </main>
-    <center>
-    <%= link_to 'Back to Products', products_path, class:"btn-index" %>
-    <%= link_to 'Back to Collections', categories_path, class:"btn-index" %></center>
-
-
+<br>
+<br>
+</main>
 </body>
+    <%# <center>
+    <%= link_to 'Back to Products', products_path, class:"btn-index" %>
+    <%# <%= link_to 'Back to Collections', categories_path, class:"btn-index" %></center>
 
 <script>
 (function() {

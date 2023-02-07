@@ -1,5 +1,5 @@
 .cover-index {
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),url(https://res.cloudinary.com/dygywvyiq/image/upload/v1675339138/dancer_joana_bossa_y9osib.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),url(https://res.cloudinary.com/dygywvyiq/image/upload/v1675807424/background_pq9ynt.png);
     background-size: cover;
     /* background-repeat: no-repeat; */
     background-position: center;
@@ -85,19 +85,12 @@ color:#908F8B;
   animation-duration: 3s;
 }
 
-#go-up-btn {
-
-  bottom: 20px;
-  right: 20px;
-  padding: 10px 20px;
-  background-color: $ocean;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
 #go-up-btn:hover {
-  background-color: $sun;
+  color: $gray;
+}
+
+#go-up-btn-products:hover {
+  color: $gray;
 }
 
 #go-up-btn-one {

@@ -100,7 +100,9 @@ body.custom {
 .my-page .price {
   margin: 0;
 }
-
+#color-breadcrump {
+  color: $gray!important;
+}
 .breadcrumb-list {
   display: flex !important;
   flex-wrap: wrap;
@@ -115,8 +117,8 @@ body.custom {
 }
 
 .breadcrumb-item {
-  &.active {
-
+  &.active:hover {
+color: $gray;
   }
   + .breadcrumb-item {
     &::before {
@@ -132,6 +134,7 @@ body.custom {
   border-top: 0.0625rem solid $gray;
   margin: 2rem 0;
   padding: 1rem 0 0 0;
+  text-align: justify;
 }
 
 .add-number-field {
@@ -256,7 +259,7 @@ body.custom {
         margin: 0;
       }
     }
-     img {
+    img {
       height: 13rem;
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
       width: 100%;
