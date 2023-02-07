@@ -15,12 +15,14 @@
       <div class="container index-cards-container">
         <%@category.products.each do |product| %>
         <div class="card-index">
-          <% count = 0 %>
-          <% product.photos.each do |photo| %>
-            <%= cl_image_tag photo.key %>
-            <% count += 1 %>
-            <% break if count == 1 %>
-            <% end %>
+        <% count = 0 %>
+        <% product.photos.each do |photo| %>
+        <%= link_to product_path(product) do %>
+        <%= cl_image_tag photo.key, class: "card-index-image"%>
+        <% end %>
+        <% count += 1 %>
+        <% break if count == 1 %>
+        <% end %>
               <div class="card-index-infos">
             <div>
               <%= link_to product_path(product), class:"text-decoration-none" do %>

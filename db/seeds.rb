@@ -22,10 +22,10 @@ puts 'Seed: Deleting existing categories...'
  category_earrings.photo.attach(io: file_earrings, filename: "earrings", content_type: "image/jpg")
  category_earrings.save!
 
-file_necklaces = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1671184574/joanabossa/110110923_204627250955117_6444346907664275144_n_mna7ph.jpg")
-category_necklaces = Category.new(name: "Necklaces", description: "Handmade necklaces")
-category_necklaces.photo.attach(io: file_necklaces, filename: "necklaces", content_type: "image/jpg")
-category_necklaces.save!
+# file_necklaces = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1671184574/joanabossa/110110923_204627250955117_6444346907664275144_n_mna7ph.jpg")
+# category_necklaces = Category.new(name: "Necklaces", description: "Handmade necklaces")
+# category_necklaces.photo.attach(io: file_necklaces, filename: "necklaces", content_type: "image/jpg")
+# category_necklaces.save!
 
 file_silver = URI.open("https://res.cloudinary.com/dygywvyiq/image/upload/v1671373019/joanabossa/36783383_614445615622770_8028850084609261568_n_x4ts0l.jpg")
 category_silver = Category.new(name: "Silver", description: "Silver 925")

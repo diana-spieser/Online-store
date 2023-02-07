@@ -4,6 +4,7 @@
   color: $cardheadline;
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
   font-family:  'Pontano Sans', sans-serif;
+  position: sticky;
 
 }
 a.nav-link {
@@ -38,4 +39,7 @@ a.nav-link {
   content: "\f07a";
   margin-top: 5px;
   font-size: 24px;
+}
+.avatar:hover {
+  cursor:pointer
 }

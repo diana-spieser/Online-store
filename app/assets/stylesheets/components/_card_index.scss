@@ -5,16 +5,16 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.card-index > img {
-  height: 300px;
+.card-index-image {
+  height: 240px !important;
   width: 100%;
   object-fit: cover;
   transition: transform .1s;
 }
-.card-index > img:hover {
-  -ms-transform: scale(1.5); /* IE 9 */
--webkit-transform: scale(1.5); /* Safari 3-8 */
-transform: scale(1.5);
+.card-index-image:hover {
+  -ms-transform: scale(1.1); /* IE 9 */
+-webkit-transform: scale(1.1); /* Safari 3-8 */
+transform: scale(1.1);
 }
 
 .card-index h2 {

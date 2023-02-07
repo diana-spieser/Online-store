@@ -3,6 +3,7 @@ class CartController < ApplicationController
   def show
     @render_cart = false
   end
+
   def add_to_cart
     # ... add the item to the cart ...
     render json: { cart_count: @cart.orderables.sum(:quantity) }
@@ -14,14 +15,14 @@ class CartController < ApplicationController
     end
     @cart.update_attributes(total: 0)
   end
-def recap
-  Orderable.find_by(id: params[:id])
-   @carts = @cart.total
-   @product = Product.find_by(id: params[:id])
+
+  def recap
+    Orderable.find_by(id: params[:id])
+    @carts = @cart.total
+    @product = Product.find_by(id: params[:id])
     quantity = params[:quantity].to_i
     current_orderable = @cart.orderables
-end
-
+  end
 
   def add
     @product = Product.find_by(id: params[:id])
