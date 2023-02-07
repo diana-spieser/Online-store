@@ -53,3 +53,13 @@ transform: scale(1.1);
   top: -20px;
   width: 40px;
 }
+
+button[type="submit"] {
+  background: transparent;
+  border: none;
+}
+
+.fa-shopping-cart {
+  font-size: 20px;
+  color: #333;
+}
