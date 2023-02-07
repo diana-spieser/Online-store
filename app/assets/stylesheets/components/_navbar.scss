@@ -1,14 +1,17 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: $beige;
-  color: $cardheadline;
+  color: $black;
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
-  font-family:  'Pontano Sans', sans-serif;
+  // font-family:  'Pontano Sans', sans-serif;
+  font-family: 'Great Vibes', cursive;
   position: sticky;
+  letter-spacing: 1px;
 
 }
 a.nav-link {
   margin-right: 10px;
+  color: $black;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -18,6 +21,7 @@ a.nav-link {
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
 
 .search {
   border-radius: 50px;
@@ -34,6 +38,7 @@ a.nav-link {
   vertical-align: middle;
   white-space: nowrap;
   margin-right: 10px;
+  font-family:  'Pontano Sans', sans-serif;
 }
 .fa-shopping-cart::before {
   content: "\f07a";
