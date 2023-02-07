@@ -79,19 +79,26 @@
     <% end %>
     </div>
     </div>
-    <div class="totals-item totals-item-total">
-      <label>Total</label>
-      <div class="totals-value" id="cart-total">
-      <% if @cart.orderables.count == 0 %>
-    <%= @cart.total %>
-  <% elsif @cart.orderables.count <= 3 %>
-    <%= @cart.total + 3 %>
-  <% else %>
-    <%= @cart.total + 6 %>
-  <% end %></div>
+
+      <% total_with_delivery = 0 %>
+<% if @cart.orderables.count == 0 %>
+  <% total_with_delivery = @cart.total %>
+<% elsif @cart.orderables.count <= 3 %>
+  <% total_with_delivery = @cart.total + 3 %>
+<% else %>
+  <% total_with_delivery = @cart.total + 6 %>
+<% end %>
+
+<div class="totals-item totals-item-total">
+  <label>Total</label>
+  <div class="totals-value" id="cart-total">
+    <%= total_with_delivery %>
+  </div>
+</div>
+  </div>
     </div>
   </div>
-  <div class="buttons">
+<div class="buttons">
 
   <button class="checkout" onClick="window.location.reload();">Confirm your order</button>
   <br>
@@ -99,15 +106,17 @@
 </div>
 </div> <!--end div id shopping -->
   </div>
-  <br>
-  <br>
-  <br>
-  <br>
- <script src="https://www.paypal.com/sdk/js?client-id=${process.env.PAYPAL_CLIENT_ID}&enable-funding=venmo&currency=EUR" data-sdk-integration-source="button-factory"></script>
 
-  <script>
 
-let orderValue = <%= @cart.total %>;
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+<script src="https://www.paypal.com/sdk/js?client-id=<%= ENV['PAYPAL_CLIENT_ID'] %>&enable-funding=venmo&currency=EUR" data-sdk-integration-source="button-factory"></script>
+<script>
+let orderValue = <%= total_with_delivery %>;
     function initPayPalButton() {
       paypal.Buttons({
         style: {
@@ -148,18 +157,4 @@ let orderValue = <%= @cart.total %>;
       }).render('#paypal-button-container');
     }
     initPayPalButton();
-  </script>
-
-
-
-<script>
-(function() {
-  document.getElementById("modify-button").addEventListener("click", function(){
-    location.reload();
-  });
-
-  document.getElementById("delete-button").addEventListener("click", function(){
-    location.reload();
-  });
-})();
   </script>
