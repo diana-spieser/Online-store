@@ -3,7 +3,7 @@
       <div class="column-xs-12">
         <nav>
           <ol class="breadcrumb-list">
-            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <%# <li class="breadcrumb-item"><a href="/">Home</a></li> %>
             <li class="breadcrumb-item"><a href="/">Collections</a></li>
             <li class="breadcrumb-item active">Products</li>
           </ol>
@@ -38,3 +38,18 @@
       <%end%>
     </div>
 </div>
+<center> <i class="fa-regular fa-circle-up"id="go-up-btn-products"></i></center>
+ <br>
+ <br>
+ <br>
+ <br>
+
+<script>
+(function() {
+const goUpBtn = document.querySelector("#go-up-btn-products");
+
+goUpBtn.addEventListener("click", function() {
+window.scrollTo({ top: 0, behavior: "smooth" });
+});
+})();
+</script>
