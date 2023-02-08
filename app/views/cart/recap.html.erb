@@ -3,8 +3,8 @@
       <div class="column-xs-12">
         <nav>
           <ol class="breadcrumb-list">
-            <li class="breadcrumb-item"><a href="/about">About</a></li>
-            <li class="breadcrumb-item"><a href="/products">Products</a></li>
+            <%# <li class="breadcrumb-item"><a href="/about">About</a></li> %>
+            <li class="breadcrumb-item"><a href="/collections">Home</a></li>
             <li class="breadcrumb-item active">Order Summary</li>
           </ol>
         </nav>
@@ -21,7 +21,8 @@
 
       <div class="paypal__subheader-wrapper">
         <div class="paypal__subheader">
-          <h1 class="paypal__username">Thank You!</h1>
+          <h1 class="paypal__username">Thank You! <% if current_user%>
+        <%= current_user.username.capitalize%><% end%></h1>
           <span class="paypal__help-text">You will recieve an email with your full order recap & delivery details .Please find below your order details:</span>
         </div>
       </div>
