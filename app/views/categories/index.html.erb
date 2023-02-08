@@ -1,11 +1,13 @@
-<!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
-  <div class="box-feature">
+<div class="box-feature">
     <div class="cover-index mb-4 d-flex align-items-center justify-content-center">
     <div class="text-top-center text-white">
       <h1>Joanabossa </h1>
         <p><span data-controller="typed-js"></span></p>
     </div>
   </div>
+    <% if current_user%>
+    <p style="text-align:center">Aloha, <%= current_user.username.capitalize%>!👋</p>
+    <% end%>
 </div>
 <br>
 <div class="container-custom">
@@ -35,7 +37,6 @@
           <p><%=category.description%></p>
         <% end %>
         </div>
-
     </div>
   </div>
   <%end%>
@@ -56,20 +57,18 @@
           <div class="column-xs-12">
             <h3>Check our latest arrivals...</h3>
           </div> %>
-
-
 <div class="index-cards-container">
   <% products = Product.order(created_at: :desc).limit(6) %>
-   <%products.each do |product| %>
+  <%products.each do |product| %>
       <div class="card-index">
-<% count = 0 %>
-<% product.photos.each do |photo| %>
-  <%= link_to product_path(product) do %>
-    <%= cl_image_tag photo.key, class: "card-index-image"%>
-  <% end %>
-  <% count += 1 %>
-  <% break if count == 1 %>
-<% end %>
+      <% count = 0 %>
+      <% product.photos.each do |photo| %>
+      <%= link_to product_path(product) do %>
+      <%= cl_image_tag photo.key, class: "card-index-image"%>
+      <% end %>
+      <% count += 1 %>
+      <% break if count == 1 %>
+      <% end %>
         <div class="card-index-infos">
           <div>
             <%= link_to product_path(product), class:"text-decoration-none" do %>
@@ -90,7 +89,6 @@
  <br>
  <br>
  <br>
-
 <script>
 (function() {
 const goUpBtn = document.querySelector("#go-up-btn");
