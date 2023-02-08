@@ -1,5 +1,5 @@
 <!-- app/views/restaurants/show.html.erb -->
-<% content_for :meta_title, "#{@product.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_title, "Say Hi to #{@product.name} by JoanaBossa #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @product.description %>
 <% content_for :meta_image, cl_image_path(@product.photos.first.key) if @product.photos.any? %>
 
