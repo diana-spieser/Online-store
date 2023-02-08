@@ -2,8 +2,8 @@
 <% content_for :meta_title, "#{@product.name} is on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @product.description %>
 <% @product.photos.each do |photo|
-  if @product.photo.attached?
-    content_for :meta_image, cl_image_path(product.photo.key)
+  if photo.attached?
+    content_for :meta_image, cl_image_path(photo.key)
     break
   end
 end %>
