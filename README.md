@@ -10,7 +10,7 @@
 
 ## Overview
 
-Welcome to the online store of Joana Bossa. This website showcases Evgenia's work and projects, including Ruby on Rails, HTML, CSS, JS, Bootstrap, Canva, and more. The website is hosted on Heroku and was built with a Rails app generated using [lewagon/rails-templates](https://github.com/lewagon/rails-templates) and created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+Welcome to the online store of Joana Bossa. This website showcases Joana's work and projects, including Ruby on Rails, HTML, CSS, JS, Bootstrap, Canva, and more. The website is hosted on Heroku and was built with a Rails app generated using [lewagon/rails-templates](https://github.com/lewagon/rails-templates) and created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
 
 ## Visit the website
 
