@@ -79,12 +79,6 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
-
-
 production:
   <<: *default
-  database: d7c5r0l82q2l4c
-  username: fzfujajhpxotbc
-  password: <%= ENV["ONLINE_STORE_DATABASE_PASSWORD"] %>
-  host: ec2-54-220-86-118.eu-west-1.compute.amazonaws.com
-  sslmode: require
+  url: <%= ENV['DATABASE_URL'] %>
